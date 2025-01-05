@@ -11,7 +11,7 @@
 ## -xelatex=xelatex without dvi
 ## -pdflua=lualatex with dvi  (faster than -lualatex)
 ## -lualatex=lualatex without dvi
-
+DRAFTON ?= 1
 # DRAFTON ?= # 1=on;0=off
 # SHOWMARKUP ?= # 1=on;0=off
 # FONTFAMILY ?= # 0=CMU;1=MS fonts;2=Liberation fonts
