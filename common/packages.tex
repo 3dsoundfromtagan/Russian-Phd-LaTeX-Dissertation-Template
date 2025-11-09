@@ -1,3 +1,6 @@
+
+\usepackage{commath}
+
 %%% Проверка используемого TeX-движка %%%
 \newif\ifxetexorluatex   % определяем новый условный оператор (http://tex.stackexchange.com/a/47579)
 \ifxetex
@@ -39,7 +42,11 @@
     fraction-function    = \sfrac,
     separate-uncertainty,
     ]{siunitx}[=v2]                 % Размерности SI
-\sisetup{inter-unit-product = \ensuremath{{}\cdot{}}}
+\sisetup{
+	inter-unit-product = \ensuremath{{}\cdot{}},
+	output-decimal-marker = {.},
+	per-mode = fraction
+}
 
 % Кириллица в нумерации subequations
 % Для правильной работы требуется выполнение сразу после загрузки пакетов
