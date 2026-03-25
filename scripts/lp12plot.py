@@ -131,7 +131,7 @@ neffs, Rs = search_modes(r, rcore, ncore, nclad, k, L)
 
 while np.size(neffs) > 0:
     for m, R in enumerate(Rs):
-        if (L == 1) and (m == 0):
+        if (L > -1) and (m > -1):
             X, Y, field = plot_mode_2d(
                 r=r,
                 radial_profile=R,
@@ -145,8 +145,8 @@ while np.size(neffs) > 0:
             # plt.title(f'l={L}, m={m}')
             plt.axis('off')  
             plt.tight_layout()
-            plt.savefig(r'..//Dissertation/images/fibershg/calc_lp12.pdf',
-                        bbox_inches='tight', pad_inches=0)
+            # plt.savefig(r'..//Dissertation/images/fibershg/calc_lp12.pdf',
+            #             bbox_inches='tight', pad_inches=0)
         # plt.plot(r, R, label = f'm = {m}')
 
         # plt.legend()
