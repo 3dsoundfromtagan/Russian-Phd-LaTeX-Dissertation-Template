@@ -34,6 +34,6 @@ ax.set_ylabel('Normalized efficiency')
 
 
 ax.legend(fontsize=12, framealpha=1)
-fig.savefig(r'../../disser/Dissertation/images/imfwm/dfg_eff_plot.pdf')
+# fig.savefig(r'../../disser/Dissertation/images/imfwm/dfg_eff_plot.pdf')
 
 
