@@ -1,0 +1,60 @@
+% !TeX program = pdflatex
+
+\documentclass[12pt]{article}
+
+\usepackage{nomencl}
+\usepackage{etoolbox}
+
+\makenomenclature
+
+% Remove default title
+\renewcommand{\nomname}{}
+
+% Create two groups: Abbreviations and Symbols
+\renewcommand{\nomgroup}[1]{%
+	\vspace{12pt}
+	\ifstrequal{#1}{A}{%
+		\item[\Large\bfseries List of Abbreviations]
+	}{%
+		\ifstrequal{#1}{B}{%
+			\item[\Large\bfseries List of Symbols]
+		}{%
+			\item[]
+		}%
+	}%
+	\vspace{4pt}
+}
+
+\begin{document}
+	
+	\section*{Introduction}
+	
+	Einstein's formula:
+	\begin{equation}
+		E = mc^2
+	\end{equation}
+	%
+	\nomenclature[B]{$E$}{energy}
+	\nomenclature[B]{$m$}{mass}
+	\nomenclature[B]{$c$}{speed of light in vacuum}
+	
+	Planck's formula:
+	\begin{equation}
+		E = h\nu
+	\end{equation}
+	%
+	\nomenclature[B]{$h$}{Planck's constant}
+	\nomenclature[B]{$\nu$}{frequency}
+	
+	\section*{Abbreviations used}
+	
+	Text with abbreviations: IR, LD, RPM.
+	%
+	\nomenclature[A]{IR}{infrared radiation}
+	\nomenclature[A]{LD}{laser distance meter}
+	\nomenclature[A]{RPM}{revolutions per minute}
+	
+	% Print the nomenclature list
+	\printnomenclature[3cm]
+	
+\end{document}
