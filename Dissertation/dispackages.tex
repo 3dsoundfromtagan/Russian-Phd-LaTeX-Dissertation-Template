@@ -12,3 +12,21 @@
 \usepackage[intoc]{nomencl}
 \makenomenclature
 \setlength{\nomitemsep}{-.8\parsep}
+\newif\iffirstglossary\firstglossarytrue
+%% This removes the main title:
+\renewcommand{\nomname}{}
+%% this modifies item separation:
+\setlength{\nomitemsep}{8pt}
+%% this part defines the groups:
+%----------------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+	\iffirstglossary
+	\firstglossaryfalse
+	\else
+	\clearpage
+	\fi
+	\item[\Large\bfseries
+	\ifstrequal{#1}{N}{Список обозначений}{%
+		\ifstrequal{#1}{A}{Список сокращений}{}}%
+	]\vspace{10pt}} % this is to add vertical space between the groups.

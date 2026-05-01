@@ -1,60 +1,40 @@
-% !TeX program = pdflatex
+% Source - https://tex.stackexchange.com/a/407956
+% Posted by user121799, modified by community. See post 'Timeline' for change history
+% Retrieved 2026-05-02, License - CC BY-SA 3.0
 
-\documentclass[12pt]{article}
-
+\documentclass{article}
 \usepackage{nomencl}
-\usepackage{etoolbox}
-
 \makenomenclature
-
-% Remove default title
+\newif\iffirstglossary\firstglossarytrue
+%% This removes the main title:
 \renewcommand{\nomname}{}
-
-% Create two groups: Abbreviations and Symbols
-\renewcommand{\nomgroup}[1]{%
-	\vspace{12pt}
-	\ifstrequal{#1}{A}{%
-		\item[\Large\bfseries List of Abbreviations]
-	}{%
-		\ifstrequal{#1}{B}{%
-			\item[\Large\bfseries List of Symbols]
-		}{%
-			\item[]
-		}%
-	}%
-	\vspace{4pt}
-}
+%% this modifies item separation:
+\setlength{\nomitemsep}{8pt}
+%% this part defines the groups:
+%----------------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+	\iffirstglossary
+	\firstglossaryfalse
+	\else
+	\clearpage
+	\fi
+	\item[\Large\bfseries
+	\ifstrequal{#1}{N}{Nomenclature}{%
+		\ifstrequal{#1}{A}{List of Abbreviations}{}}%
+	]\vspace{10pt}} % this is to add vertical space between the groups.
+%----------------------------------------------
 
 \begin{document}
+	Here we go!
 	
-	\section*{Introduction}
+	\nomenclature[A]{\textbf{IMO}}{in my opinion}
+	\nomenclature[A]{\textbf{OP}}{original poster}
+	\nomenclature[A]{\textbf{CDM}}{carefully driving marmot}
+	\nomenclature[N]{$c$}{speed of light in vacuum}
+	\nomenclature[N]{$h$}{Planck constant}
+	\nomenclature[N]{$w$}{average weight of a marmot}
 	
-	Einstein's formula:
-	\begin{equation}
-		E = mc^2
-	\end{equation}
-	%
-	\nomenclature[B]{$E$}{energy}
-	\nomenclature[B]{$m$}{mass}
-	\nomenclature[B]{$c$}{speed of light in vacuum}
-	
-	Planck's formula:
-	\begin{equation}
-		E = h\nu
-	\end{equation}
-	%
-	\nomenclature[B]{$h$}{Planck's constant}
-	\nomenclature[B]{$\nu$}{frequency}
-	
-	\section*{Abbreviations used}
-	
-	Text with abbreviations: IR, LD, RPM.
-	%
-	\nomenclature[A]{IR}{infrared radiation}
-	\nomenclature[A]{LD}{laser distance meter}
-	\nomenclature[A]{RPM}{revolutions per minute}
-	
-	% Print the nomenclature list
-	\printnomenclature[3cm]
+	\printnomenclature[2cm]
 	
 \end{document}
