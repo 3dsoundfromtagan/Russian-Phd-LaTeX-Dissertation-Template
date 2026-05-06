@@ -19,14 +19,15 @@ no_sync = np.array([0.99469, 0.98971, 0.98833, 0.97369, 0.96401, 0.92395, 0.8579
 plt.style.use(r'conf.mplstyle')
 
 fig, ax = plt.subplots(figsize=(6, 3), dpi=300, layout='tight')
-ax.plot(lengths, sync, '.',
-        markersize=7, label='Synchronized')
 ax.plot(lengths, no_sync, '.',
-        markersize=7, label='Unsynchronized')
+        markersize=7, label='Несинхронизированные импульсы', color='black')
+ax.plot(lengths, sync, '.',
+        markersize=7, label='Синхронизированные импульсы', color=[0.8, 0, 0])
+
 
 ax.set_ylim(0,1.05)
-ax.set_xlabel('OF length, m')
-ax.set_ylabel('Norm. est. efficiency')
+ax.set_xlabel('Длина ОВ, м')
+ax.set_ylabel('Нормированная\nэффективность')
 
 
 ax.legend(fontsize=12, framealpha=1)

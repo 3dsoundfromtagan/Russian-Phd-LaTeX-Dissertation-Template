@@ -22,15 +22,15 @@ plt.style.use(r'conf.mplstyle')
 fig, ax = plt.subplots(figsize=(6, 3), dpi=300, layout='tight')
 
 ax.plot(lengths, mf, '.',
-        markersize=7, label='With MF')
+        markersize=7, label='С МФ', color='black')
 ax.plot(lengths, no_mf, '.',
-        markersize=7, label='Without MF')
+        markersize=7, label='Без МФ', color='blue')
 
-ax.set_xlabel('OF length, m')
-ax.set_ylabel('Normalized efficiency')
+ax.set_xlabel('Длина ОВ, м')
+ax.set_ylabel('Нормированная\nэффективность')
 
 
 ax.legend(fontsize=12, framealpha=1)
-fig.savefig(r'../../disser/Dissertation/images/imfwm/dfg_eff_mf.pdf')
+# fig.savefig(r'../../disser/Dissertation/images/imfwm/dfg_eff_mf.pdf')
 
 

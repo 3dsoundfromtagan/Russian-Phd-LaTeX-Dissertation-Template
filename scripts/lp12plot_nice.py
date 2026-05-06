@@ -27,12 +27,12 @@ ax.plot(df_ii['length'],
 # ax.plot(lengths_theory, theory, '.',
 #         markersize=7, label='Estimated (from output spectra)')
 
-ax.set_xlabel('MF length, cm')
-ax.set_ylabel('Transmittance, %')
+ax.set_xlabel('Длина МФ, см')
+ax.set_ylabel('Пропускание, %')
 ax.set_xlim(-0, 10)
 ax.set_ylim(-0.5, 105)
 
 ax.legend(fontsize=12, framealpha=1)
-fig.savefig(r'../../disser/Dissertation/images/imfwm/mf_eff_plot.pdf')
+# fig.savefig(r'../../disser/Dissertation/images/imfwm/mf_eff_plot.pdf')
 
 

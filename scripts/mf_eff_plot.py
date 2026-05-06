@@ -55,8 +55,8 @@ ax.plot(df_ii['lengths_lpii_sorted'],
 # ax.plot(lengths_theory, theory, '.',
 #         markersize=7, label='Estimated (from output spectra)')
 
-ax.set_xlabel('MF length, cm')
-ax.set_ylabel('Transmittance, %')
+ax.set_xlabel('Длина МФ, см')
+ax.set_ylabel('Пропускание, %')
 
 
 ax.legend(fontsize=12, framealpha=1)
