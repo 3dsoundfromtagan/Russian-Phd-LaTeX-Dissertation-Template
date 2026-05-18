@@ -2,14 +2,23 @@
 
 Как указано в \cref{subsec:propagation}, нелинейный отклик среды описывается разложением поляризации $\mathbf{P}$ по степеням поля $\mathbf{E}$ (см.~\cref{eq:polarization}). Восприимчивость второго порядка $\chi^{(2)}$ даёт вклад в поляризацию на частоте $2\omega$:
 
+%\nomenclature[N]{$\mathbf{P}^{(2)}(2\omega)$~[\si{\coulomb\per\meter\squared}]}{Нелинейная поляризация второго порядка на частоте $2\omega$}
+%\nomenclature[N]{$\chi^{(2)}$~[\si{\meter\per\volt}]}{Тензор квадратичной нелинейной восприимчивости}
+%\nomenclature[N]{$\mathbf{E}(\omega)$~[\si{\volt\per\meter}]}{Электрическое поле волны на частоте $\omega$ (накачка)}
+%\nomenclature[N]{$\mathbf{E}_\omega$~[\si{\volt\per\meter}]}{Электрическое поле волны накачки (частота $\omega$), представление в виде бегущей волны}
+%\nomenclature[N]{$\mathbf{E}_{2\omega}$~[\si{\volt\per\meter}]}{Электрическое поле второй гармоники (частота $2\omega$), представление в виде бегущей волны}
+\nomenclature[N]{$\mathbf{A}_{0,1,2}(z,t)$~[\si{\volt\per\meter}]}{Комплексная амплитуда постоянного поля, волны накачки, второй гармоники}
+
+
+
 \begin{equation}\label{eq:p_nl_chi2}
 	\mathbf{P}^{(2)}(2\omega) = \varepsilon_0 \chi^{(2)} : \mathbf{E}(\omega)\mathbf{E}(\omega).
 \end{equation}
 
 
 \begin{equation}\label{eq:plane_wave}
-	\mathbf{E}_\omega = \tfrac12 \mathbf{A}_1(z) e^{i(k_1 z - \omega t)} + \text{к.с.}, \qquad
-	\mathbf{E}_{2\omega} = \tfrac12 \mathbf{A}_2(z) e^{i(k_2 z - 2\omega t)} + \text{к.с.}
+	\mathbf{E}_\omega = \tfrac12 \mathbf{A}_1(z) e^{\im(k_1 z - \omega t)} + \text{к.с.}, \qquad
+	\mathbf{E}_{2\omega} = \tfrac12 \mathbf{A}_2(z) e^{\im(k_2 z - 2\omega t)} + \text{к.с.}
 \end{equation}
 
 Для вывода укороченных уравнений ГВГ~\cite{dmitriev2004prikladnaya} представим поля основной волны и второй гармоники в виде плоских волн~\cref{eq:plane_wave} и подставим их в волновое уравнение~\cref{eq:wave} с нелинейной поляризацией~\cref{eq:p_nl_chi2}.  При выводе пользуемся приближением медленно меняющихся амплитуд, то есть пренебрегаем вторыми производными полей по координатам. Это справедливо при условии $|\partial^2 A_{1,2}/\partial z^2| \ll k_{1,2}|\partial A_{1,2}/\partial z|$. В случае ОВ необходимо заменить показатели преломления на эффективные показатели преломления соответствующих мод, а также учесть интегралы перекрытия поперечных распределений полей (см.~\cref{subsec:modes}). Итоговая система принимает вид:
