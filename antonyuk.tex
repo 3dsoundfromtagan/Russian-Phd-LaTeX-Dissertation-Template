@@ -34,18 +34,20 @@
 \begin{align}
 	\frac{\partial A_1}{\partial z} &= \im \frac{4\pi\omega \chi^{(3)}}{c n_\omega}  A_0^* A_1^* A_2, \label{eq:antonyuk_A1} \\
 	\frac{\partial A_2}{\partial z} &= \im \frac{4\pi\omega \chi^{(3)}}{c n_{2\omega}} A_0 A_1^2, \label{eq:antonyuk_A2} \\
-	\frac{\partial A_0}{\partial t} &= \alpha_2 |A_2|^2 \left( u e^{\im\left[\arg{A_2}-2\arg{A_1}\right]}-A_{0}\right). \label{eq:antonyuk_A0}
+	\frac{\partial A_0}{\partial t} &= \alpha_2 |A_2|^2 \left( u e^{\im\left[\arg{A_2}-2\arg{A_1}\right]}-|A_{0}|e^{\im\arg{A_0}}\right). \label{eq:antonyuk_A0}
 \end{align}
 
 Здесь $A_1, A_2, A_0$~--- комплексные амплитуды полей накачки, второй гармоники и квазистатического поля соответственно; $n_\omega$, $n_{2\omega}$ --- эффективные показатели преломления на частотах $\omega$ и $2\omega$; $\chi^{(3)}$ --- кубическая нелинейная восприимчивость; $\alpha_2$ --- коэффициент, определяющий скорость роста статического поля; $u$ --- амплитуда насыщения постоянного электрического поля ($u \sim 10^5$~В/см). Первые два уравнения представляют собой укороченные уравнения ГВГ~\cref{eq:plane_wave}, d в которых квадратичная нелинейная восприимчивость обусловлена наличием постоянного электрического поля: $\chi^{(2)} \sim \chi^{(3)} A_0$. Третье уравнение описывает динамику статического поля, наводимого второй гармоникой за счёт образования ЭПЗ: скорость его изменения пропорциональна интенсивности $|A_2|^2$, а стационарное значение стремится к $u e^{\im\left[\arg{A_2}-2\arg{A_1}\right]}$.
-	
-\todo{Заменить Esat на u!}
 
-Особенностью системы уравнений~\cref{eq:antonyuk_A0} является самовыключение ГВГ. Стационарное решение системы имеет вид:\todo{тут написана херня}
 
-\begin{equation}
-	A_0 = u e^{i(\psi_2 - 2\psi_1)}, \quad \frac{\partial A_1}{\partial z} = 0, \quad \frac{\partial A_2}{\partial z} = 0,
-\end{equation}
+Особенностью системы уравнений~\cref{eq:antonyuk_A0} является самовыключение ГВГ. Стационарное решение системы имеет вид:
+
+\begin{align}\label{eq:station_anton}
+	&A_0 = u e^{\im(\arg A_2 - 2\arg A_1)}, \quad
+	|A_1(t, z)|=|A_1(0, z)|,\quad
+	|A_2(t, z)|=|A_2(0, z)|,\\
+	&\arg{A_0}+2\arg{A_1}-\arg{A_2} = 0.
+\end{align}
 
 
 \begin{figure}[h]
