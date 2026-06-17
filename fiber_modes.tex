@@ -1,0 +1,95 @@
+\subsection{Поперечные моды ОВ}\label{subsec:modes}
+
+Рассмотрим волновое уравнение~\eqref{eq:wave} в отсутствие нелинейной поляризации ($\mathbf{P_{\mathrm{NL}}}=0$). Данное приближение допустимо, поскольку в кварцевых ОВ нелинейная восприимчивость третьего порядка $\chi^{(3)}$ много меньше линейной восприимчивости $\chi^{(1)}$, и при не слишком высоких напряжённостях электрического поля нелинейным вкладом в суммарную поляризацию~\eqref{eq:polarization} можно пренебречь. В этом случае поперечное распределение поля моды определяется исключительно линейным откликом среды. Переходя в частотное представление, запишем волновое уравнение в спектральном представлении:
+
+\nomenclature[N]{$\widetilde{\mathbf{E}}$~[\si{\volt\second\per\meter}]}{Фурье-образ напряжённости электрического поля}
+\nomenclature[N]{$\nabla^2$~[\si{\per\meter\squared}]}{Лапласиан}
+\nomenclature[N]{$k, k_0$~[\si{\per\meter}]}{Волновое число в среде, в вакууме}
+\nomenclature[N]{$t$~[\si{\second}]}{Время}
+\nomenclature[N]{$\omega$~[\si{\radian\per\second}]}{Угловая частота}
+\nomenclature[N]{$\delta$~[\si{\meter}]}{Толщина переходного слоя на границе сердцевина-оболочка}
+\nomenclature[N]{$\mathbf{r}$~[\si{\meter}]}{Радиус-вектор}
+\nomenclature[N]{$r~[\si{\meter}], \varphi, z~[\si{\meter}]$}{Цилиндрические координаты}
+
+\nomenclature[N]{$\im$}{Мнимая единица}
+\nomenclature[N]{$\Delta$}{Изменение величины}
+
+
+\begin{equation}\label{eq:helmholtz_vector}
+	\nabla \times \nabla \times \widetilde{\mathbf{E}}(\mathbf{r},\omega) = \varepsilon(\omega) \frac{\omega^2}{c^2} \widetilde{\mathbf{E}}(\mathbf{r},\omega)
+\end{equation}
+
+Воспользуемся соотношением из векторного анализа
+
+\begin{equation}\label{eq:rotrot_identity_delta}
+	\nabla \times \nabla \times \widetilde{\mathbf{E}} = \nabla(\nabla \cdot \widetilde{\mathbf{E}}) - \nabla^2 \widetilde{\mathbf{E}},
+\end{equation}
+
+В~\cref{eq:rotrot_identity_delta} сравним порядки величин первого и второго слагаемых.
+
+\begin{subequations}\label{eq:e0_estimation}
+	\begin{align}
+		\nabla^2 \widetilde{\mathbf{E}} &\sim k_0^2E_0, \label{eq:e0_estimation_a} \\
+		\nabla(\nabla \cdot \widetilde{\mathbf{E}}) &= \nabla(-\nabla\epsilon \cdot \widetilde{\mathbf{E}}/\epsilon) \sim \nabla(\dfrac{\Delta\epsilon E_0}{\delta \epsilon}) \sim \dfrac{\Delta \epsilon E_0}{\delta^2 \epsilon} \label{eq:e0_estimation_b}
+	\end{align}
+\end{subequations}
+
+В~\cref{eq:e0_estimation} $k_0$~--- волновое число в вакууме, $E_0$~--- характерная величина амплитуды поля, $\delta$~--- толщина переходного слоя на границе <<сердцевина--оболочка>>, $\Delta \varepsilon$~--- изменение диэлектрической проницаемости между сердцевиной и оболочкой. Пренебрежение слагаемым~\cref{eq:e0_estimation_b} по сравнению с~\cref{eq:e0_estimation_a} допустимо при выполнении условия:
+
+\begin{equation}\label{eq:weak_guidance_criterion}
+	\frac{\Delta \varepsilon}{\varepsilon} \cdot \frac{1}{(k_0 \delta)^2} \ll 1
+\end{equation}
+
+\nomenclature[N]{$n$, $n_{\text{core}}$, $n_{\text{clad}}$}{Показатели преломления: среды, сердцевины, оболочки ОВ}
+\nomenclature[N]{$\lambda$~[\si{\meter}]}{Длина волны в вакууме}
+
+
+Для типичного ОВ ($\delta \approx 1~\text{мкм}$, $\lambda \approx 1~\text{мкм}$, $(n_{\text{core}}-n_{\text{clad}})/n \sim 10^{-3}$) отношение $\frac{\Delta\varepsilon}{\varepsilon} \frac{1}{(k_0 \delta)^2}$ не превышает $10^{-4}$, что позволяет пренебречь слагаемым $\nabla(\nabla \cdot \widetilde{\mathbf{E}})$ и перейти к уравнению Гельмгольца:
+
+\begin{equation}\label{eq:helmholtz_n}
+	\nabla^2 \widetilde{\mathbf{E}}(\mathbf{r},\omega) + n^2(\omega) \frac{\omega^2}{c^2} \widetilde{\mathbf{E}}(\mathbf{r},\omega) = 0
+\end{equation}
+
+где поглощение в среде считается пренебрежимо малым, вследствие чего показатель преломления $n(\omega)$ полагается чисто вещественной величиной.
+
+Вследствие цилиндрической симметрии волокна уравнение~\cref{eq:helmholtz_n} удобно переписать в цилиндрических координатах $r$, $\phi$, $z$:
+
+\begin{equation}\label{eq:helmholtz_cylindrical}
+	\frac{\partial^2 \widetilde{\mathbf{E}}}{\partial r^2} + \frac{1}{r} \frac{\partial \widetilde{\mathbf{E}}}{\partial r} + \frac{1}{r^2} \frac{\partial^2 \widetilde{\mathbf{E}}}{\partial \varphi^2} + \frac{\partial^2 \widetilde{\mathbf{E}}}{\partial z^2} + n^2 k_0^2 \widetilde{\mathbf{E}} = 0
+\end{equation}
+
+
+Уравнение~\eqref{eq:helmholtz_cylindrical} является векторным, и его решение в цилиндрических координатах приводит к громоздкой системе уравнений для всех шести компонент электромагнитного поля. Для большинства практических применений, включая рассматриваемые в данной работе н-о эффекты, достаточно приближения слабонаправляющего волновода, при котором относительная разность показателей преломления в сердцевине и в оболочке ОВ мала. В этом случае продольные компоненты поля $E_z$ и $H_z$ пренебрежимо малы по сравнению с поперечными, и волновое уравнение сводится к скалярному уравнению для доминирующей поперечной компоненты поля. В этом случае скалярное электрическое поле представимо в виде
+
+\begin{equation}\label{eq:scalar_field}
+	\widetilde{E}=A(\omega)F(r)\exp{(\im l \phi)}\exp{(\im \beta_p z)}
+\end{equation}
+
+Здесь амплитудный множитель $A(\omega)$ зависит только от частоты, $l \in \mathbb{N}_0$~--- азимутальный индекс, $\beta_p$~--- постоянная распространения, $F(r)$~--- 	 радиальная функция распределения поля, являющаяся решением уравнения Бесселя:
+
+\nomenclature[N]{$l$, $m$}{Азимутальный и радиальный индексы моды}
+\nomenclature[N]{$\beta_p$~[\si{\per\meter}]}{Постоянная распространения}
+
+
+\begin{equation}\label{eq:bessel_radial}
+	\frac{d^2 F}{dr^2} + \frac{1}{r} \frac{dF}{dr} + \left( n^2 k_0^2 - \beta_p^2 - \frac{l^2}{r^2} \right) F = 0
+\end{equation}
+
+\nomenclature[N]{$U$, $W$~[\si{\per\meter}]}{Поперечные волновые числа в сердцевине и оболочке}
+\nomenclature[N]{$V_m = r_{\text{core}}\sqrt{U^2+U^2}$}{Нормализованная частота}
+\nomenclature[N]{$r_{\text{core}}$~[\si{\meter}]}{Радиус сердцевины ОВ}
+
+Для ступенчатого профиля показателя преломления решениями уравнения~\cref{eq:bessel_radial} в сердцевине ОВ являются функции Бесселя первого рода $J_l(U r)$, в оболочке~--- модифицированные функции Бесселя $K_l(W r)$, где $U^2 = n_{\text{core}}^2 k_0^2 - \beta_p^2$ и $W^2 = \beta_p^2 - n_{\text{clad}}^2 k_0^2$.
+
+Получаемые таким образом решения называются линейно поляризованными модами и обозначаются $\text{LP}_{lm}$. Индекс $l$ определяет азимутальную структуру моды и отвечает за количество пар лепестков распределения интенсивности. Индекс $m = 1, 2, \dots$ нумерует последовательные корни характеристического уравнения, соответствующие различным радиальным распределениям поля и определяет количество пучностей радиальной части модовой функции.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{Dissertation/images/review/lp_modes}
+	\caption{Поперечное распределение электрического поля различных $\text{LP}_{lm}$ мод оптического волокна}
+	\label{fig:lp_modes}
+\end{figure}
+
+На рис.~\cref{fig:lp_modes} показаны распределения полей для нескольких низших $\text{LP}_{lm}$ мод. Световоды, поддерживающие распространение только фундаментальной моды $\LPoi$, называется одномодовым. Если в волокне может распространяться небольшое число мод, его принято называть маломодовым. Волокна, поддерживающие сотни и тысячи мод, относятся к многомодовым.
+
+Знание поперечного распределения поля $\text{LP}_{lm}$ мод необходимо для количественного описания н-о процессов в ОВ. В разделах~\cref{subsec:fwm, subsec:dianov_antonyuk}, посвящённых ЧВС и ГВГ в ОВ соответственно, при моделировании указанных процессов будут учтены как интегралы перекрытия поперечных мод, так и волноводная дисперсия эффективного показателя преломления, определяющая фазовые соотношения между взаимодействующими волнами.

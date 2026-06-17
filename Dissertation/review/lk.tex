@@ -1,0 +1,41 @@
+\subsection{Лазерная калориметрия}
+
+Лазерная калориметрия (ЛК) является современным стандартом измерения коэффициентов оптического поглощения \cite{ISO11551}. В основе метода лежит сопоставление экспериментальной зависимости температуры образца от времени $T(t)$ при его разогреве лазерным излучением в течение времени $t_0$ и последующем остывании с решением соответствующего уравнения теплового баланса:
+\nomenclature{ЛК}{Лазерная калориметрия}
+
+\begin{equation}
+	\begin{cases}
+		\dfrac{d T}{d t} = \overline{Q}\theta(t_0 - t) - \Gamma(T - T_a), \\
+		T(0) = T_a,
+	\end{cases}
+	\label{eq:balance_equation}
+\end{equation}
+
+\nomenclature[N]{$\overline{Q}$~[\si{\kelvin\per\second}]}{Усреднённый по образцу тепловой источник}
+\nomenclature[N]{$L$~[\si{\meter}]}{Длина образца}
+\nomenclature[N]{$\theta(t)$}{Функция Хевисайда}
+\nomenclature[N]{$m$~[\si{\kilogram}]}{Масса}
+\nomenclature[N]{$\rho$~[\si{\kilogram\per\meter\cubed}]}{Плотность}
+\nomenclature[N]{$V$~[\si{\meter\cubed}]}{Объём}
+\nomenclature[N]{$c_{\text{sp}}$~[\si{\joule\per(\kilogram\ensuremath{\cdot}\kelvin)}]}{Удельная теплоёмкость}
+\nomenclature[N]{$\alpha$~[\si{\per\meter}]}{Коэффициент оптического поглощения}
+\nomenclature[N]{$\Gamma$~[\si{\per\second}]}{Скорость теплоотдачи}
+\nomenclature[N]{$h$~[\si{\watt\per(\meter\squared\ensuremath{\cdot}\kelvin)}]}{Коэффициент теплоотдачи}
+\nomenclature[N]{$S$~[\si{\meter\squared}]}{Площадь поверхности образца}
+\nomenclature[N]{$T_a$~[\si{\kelvin}]}{Температура окружающей среды}
+
+
+где $\overline{Q} = P(1 - \exp(\alpha L))/mc_{\text{sp}} \approx \alpha LP/(mc_{\text{sp}})$ --- усреднённый по образцу тепловой источник, связанный с поглощением лазерного излучения при малом оптическом поглощении, $\alpha L \ll 1$, $P$ --- мощность излучения, $L$ --- длина образца, $\theta(t)$ --- тета-функция Хевисайда, $t_0$ --- момент выключения лазерного излучения, $m = \rho V$ --- масса образца, $\rho$ --- плотность, $V$ --- объём, $c_{\text{sp}}$ --- удельная теплоёмкость, $\alpha$ --- коэффициент оптического поглощения, $\Gamma = hS/(mc_{\text{sp}})$ --- скорость теплоотдачи, $h$ --- коэффициент теплоотдачи, $S$ --- площадь поверхности образца, $T_a$ --- температура окружающей среды.
+
+
+
+В предположении постоянства параметров $\Gamma$ и $T_a$ решение уравнения (\ref{eq:balance_equation}) имеет вид
+
+\begin{equation}
+	T(t) = T_a + \frac{\overline{Q}}{\Gamma}
+	\begin{cases}
+		1 - e^{-\Gamma t}, & t \leq t_0, \\
+		e^{-\Gamma t}(e^{\Gamma t_0} - 1), & t > t_0.
+	\end{cases}
+	\label{eq:balance_equation_solution}
+\end{equation}.

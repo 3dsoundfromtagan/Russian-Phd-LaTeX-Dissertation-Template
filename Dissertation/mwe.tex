@@ -1,0 +1,30 @@
+\documentclass[14pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+\begin{document}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Параметры оптического волокна FUD-3564}
+		\label{tab:fud3564_params}
+		\begin{tabular}{@{}lc@{}}
+			\toprule
+			Параметр & Значение \\
+			\midrule
+			Производитель & Coherent \\
+			Диаметр сердцевины & \SI{12}{\micro\meter} \\
+			$\Delta n$ & $3.1 \times 10^{-3}$ \\
+			MFD при \SI{1030}{\nano\meter} & \SI{12}{\micro\meter} \\
+			MFD при \SI{1562}{\nano\meter} & \SI{14}{\micro\meter} \\
+			Поддерживаемые моды при \SI{1030}{\nano\meter} & LP$_{01}$, LP$_{11}$ \\
+			Поддерживаемые моды при \SI{1562}{\nano\meter} & LP$_{01}$ \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+\end{document}

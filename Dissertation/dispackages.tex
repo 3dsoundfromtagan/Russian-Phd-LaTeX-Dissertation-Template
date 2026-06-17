@@ -1,0 +1,32 @@
+%%% Прикладные пакеты %%%
+%\usepackage{calc}               % Пакет для расчётов параметров, например длины
+
+%%% Для добавления Стр. над номерами страниц в оглавлении
+%%% http://tex.stackexchange.com/a/306950
+\usepackage{afterpage}
+
+%%% Списки %%%
+\usepackage{enumitem}
+
+%%% Оформление списка обозначений
+\usepackage[intoc]{nomencl}
+\makenomenclature
+\setlength{\nomitemsep}{-.8\parsep}
+\newif\iffirstglossary\firstglossarytrue
+%% This removes the main title:
+\renewcommand{\nomname}{}
+%% this modifies item separation:
+%\setlength{\nomitemsep}{8pt}
+%% this part defines the groups:
+%----------------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+	\iffirstglossary
+	\firstglossaryfalse
+	\else
+	\clearpage
+	\fi
+	\item[\bfseries
+	\ifstrequal{#1}{N}{Обозначения}{%
+		\ifstrequal{#1}{A}{Сокращения}{}}%
+	]\vspace{10pt}} % this is to add vertical space between the groups.

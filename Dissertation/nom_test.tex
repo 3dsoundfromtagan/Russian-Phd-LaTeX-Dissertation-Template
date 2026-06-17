@@ -1,0 +1,40 @@
+% Source - https://tex.stackexchange.com/a/407956
+% Posted by user121799, modified by community. See post 'Timeline' for change history
+% Retrieved 2026-05-02, License - CC BY-SA 3.0
+
+\documentclass{article}
+\usepackage{nomencl}
+\makenomenclature
+\newif\iffirstglossary\firstglossarytrue
+%% This removes the main title:
+\renewcommand{\nomname}{}
+%% this modifies item separation:
+\setlength{\nomitemsep}{8pt}
+%% this part defines the groups:
+%----------------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+	\iffirstglossary
+	\firstglossaryfalse
+	\else
+	\clearpage
+	\fi
+	\item[\Large\bfseries
+	\ifstrequal{#1}{N}{Nomenclature}{%
+		\ifstrequal{#1}{A}{List of Abbreviations}{}}%
+	]\vspace{10pt}} % this is to add vertical space between the groups.
+%----------------------------------------------
+
+\begin{document}
+	Here we go!
+	
+	\nomenclature[A]{\textbf{IMO}}{in my opinion}
+	\nomenclature[A]{\textbf{OP}}{original poster}
+	\nomenclature[A]{\textbf{CDM}}{carefully driving marmot}
+	\nomenclature[N]{$c$}{speed of light in vacuum}
+	\nomenclature[N]{$h$}{Planck constant}
+	\nomenclature[N]{$w$}{average weight of a marmot}
+	
+	\printnomenclature[2cm]
+	
+\end{document}
