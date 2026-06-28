@@ -40,15 +40,14 @@
 
 \input{syno_fourth}
 
+%
+%Можно сослаться на свои работы в автореферате. Для этого в файле
+%\verb!Synopsis/setup.tex! необходимо присвоить положительное значение
+%счётчику \verb!\setcounter{usefootcite}{1}!. В таком случае ссылки на
+%работы других авторов будут подстрочными.
+%Изложенные в третьей главе результаты опубликованы в~\cite{vakbib1, vakbib2}.
+%Использование подстрочных ссылок внутри таблиц может вызывать проблемы.
 
-Можно сослаться на свои работы в автореферате. Для этого в файле
-\verb!Synopsis/setup.tex! необходимо присвоить положительное значение
-счётчику \verb!\setcounter{usefootcite}{1}!. В таком случае ссылки на
-работы других авторов будут подстрочными.
-Изложенные в третьей главе результаты опубликованы в~\cite{vakbib1, vakbib2}.
-Использование подстрочных ссылок внутри таблиц может вызывать проблемы.
-
-В \underline{\textbf{четвертой главе}} приведено описание
 
 \FloatBarrier
 \pdfbookmark{Заключение}{conclusion}                                  % Закладка pdf
@@ -56,9 +55,9 @@
 \input{common/concl}
 
 \pdfbookmark{Литература}{bibliography}                                % Закладка pdf
-При использовании пакета \verb!biblatex! список публикаций автора по теме
-диссертации формируется в разделе <<\publications>>\ файла
-\verb!common/characteristic.tex!  при помощи команды \verb!\nocite!
+%При использовании пакета \verb!biblatex! список публикаций автора по теме
+%диссертации формируется в разделе <<\publications>>\ файла
+%\verb!common/characteristic.tex!  при помощи команды \verb!\nocite!
 
 \ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=false}}{} % не рекомендуется применять пакет микротипографики к автоматически генерируемому списку литературы
 \urlstyle{rm}                               % ссылки URL обычным шрифтом
@@ -114,7 +113,7 @@
 	\nocite{iclo2024gradient_theory}
 	\nocite{iclo2024gradient_exp}
 	\nocite{mipt67shg_fiber}
-	\nocite{ostapiv2021determination}
+%	\nocite{ostapiv2021determination}
     %
     %% authorother
 %    \nocite{bib1}%
