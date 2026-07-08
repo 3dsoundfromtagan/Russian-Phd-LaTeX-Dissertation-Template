@@ -196,7 +196,7 @@
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.65\linewidth]{Dissertation/images/gradient/scheme}
+	\includegraphics[width=0.55\linewidth]{Dissertation/images/gradient/scheme}
 	\caption{Схема экспериментальной установки: 1 --- источник лазерного излучения; 2 --- измеритель резонансной частоты кристалла; 3 --- компьютер; 4 --- термодатчик, измеряющий температуру окружающей среды; 5 --- измеритель мощности}
 	\label{fig:abs_scheme}
 \end{figure}
@@ -206,7 +206,7 @@
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Dissertation/images/gradient/main_no_ambient_sub}
+	\includegraphics[width=0.65\linewidth]{Dissertation/images/gradient/main_no_ambient_sub}
 	\caption{Коэффициент оптического поглощения в методе ПРЛК, определённый различными методами. 1~--- экспоненциальный метод, 2~--- импульсный метод, 3~--- градиентный метод}
 	\label{fig:main_no_ambient_sub}
 \end{figure}
@@ -215,12 +215,12 @@
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Dissertation/images/gradient/main_fourier_ambient}
+	\includegraphics[width=0.65\linewidth]{Dissertation/images/gradient/main_fourier_ambient}
 	\caption{Экспериментальные результаты с коррекцией изменения температуры окружающей среды. 1~--- экспоненциальный метод, 2~--- импульсный метод, 3~--- градиентный метод}
 	\label{fig:main_fourier_ambient}
 \end{figure}
 
-В ходе эксперимента температура окружающей среды изменялась линейно: на этапе нагрева наблюдался линейный рост, сменяющийся после отключения излучения линейным спадом с характерной скоростью порядка \(1\cdot10^{-4}\)~К/с. Такой характер температурной кинетики можно интерпретировать как частный случай экспоненциальной зависимости при стремлении параметра \(\Gamma_a\) к нулю. По абсолютному значению величина \(\dfrac{dT_a}{dt}\) составляла около 7\% от величины мощности теплового источника, причиной которого является оптическое поглощение.
+В ходе эксперимента температура окружающей среды изменялась линейно: на этапе нагрева наблюдался линейный рост, сменяющийся после отключения излучения линейным спадом с характерной скоростью порядка \(1\cdot10^{-4}\)~К/с. Такой характер температурной кинетики можно интерпретировать как частный случай экспоненциальной зависимости при стремлении параметра \(\Gamma_a\) к нулю. По абсолютному значению величина \(\dfrac{dT_a}{dt}\) составляла около 7\% от величины мощности теплового источника $\overline{Q}$, причиной которого является оптическое поглощение.
 
 На рис.~\cref{fig:main_fourier_ambient} приведены значения коэффициентов оптического поглощения, рассчитанные с учётом поправок на изменение температуры окружающей среды по формулам~\eqref{eq:g_corr_ta}, \eqref{eq:correction_ta}. Среднее значение коэффициента оптического поглощения возросло на 8\% для всех трёх методик. Как следует из соотношения~\eqref{eq:q_corr_ta}, отсутствие учёта кинетики температуры окружающей среды вызывает занижение расчётной мощности тепловыделения, пропорциональной коэффициенту оптического поглощения. Тем не менее, в рамках одного эксперимента и различных методик наблюдалось различие в значениях до 30\%.
 
@@ -228,7 +228,7 @@
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Dissertation/images/gradient/main_imponential}
+	\includegraphics[width=0.65\linewidth]{Dissertation/images/gradient/main_imponential}
 	\caption{Экспериментальные результаты с учётом изменения коэффициента теплоотдачи. 1~--- экспоненциальный метод, 2~--- импульсный метод, 3~--- градиентный метод}
 	\label{fig:main_imponential}
 \end{figure}
@@ -239,7 +239,7 @@
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Dissertation/images/gradient/main_fourier_ambient_imponential}
+	\includegraphics[width=0.65\linewidth]{Dissertation/images/gradient/main_fourier_ambient_imponential}
 	\caption{Экспериментальные результаты с учётом изменения температуры окружающей среды и коэффициента теплоотдачи. 1~--- экспоненциальный метод, 2~--- импульсный метод, 3~--- градиентный метод}
 	\label{fig:main_fourier_ambient_imponential}
 \end{figure}
