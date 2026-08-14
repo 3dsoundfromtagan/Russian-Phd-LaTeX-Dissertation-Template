@@ -1,0 +1,176 @@
+\documentclass[tikz,border=10pt]{standalone}
+
+\usepackage{fontspec}
+\usepackage[russian,english]{babel}
+
+\babelfont{rm}{Times New Roman}
+\babelfont{sf}{Arial}
+
+\usetikzlibrary{
+	arrows.meta,
+	positioning,
+	fit,
+	decorations.pathmorphing,
+	calc
+}
+
+\begin{document}
+	
+	\begin{tikzpicture}[
+		font=\small,
+		>=Latex,
+		line cap=round,
+		line join=round
+		]
+		
+		% -------------------------------------------------
+		% Colors
+		% -------------------------------------------------
+		\definecolor{pump}{RGB}{70,120,200}
+		\definecolor{fiber}{RGB}{220,140,40}
+		\definecolor{head}{RGB}{190,70,70}
+		\definecolor{problem}{RGB}{210,80,80}
+		
+		% -------------------------------------------------
+		% Pump laser
+		% -------------------------------------------------
+		\node[
+		draw,
+		rounded corners=4pt,
+		minimum width=2.8cm,
+		minimum height=1.5cm,
+		fill=pump!8,
+		thick
+		] (laser) at (0,0)
+		{\begin{tabular}{c}
+				\textbf{Лазер}\\[-1mm]
+		\end{tabular}};
+		
+		% Small laser output indicator
+		\draw[very thick, pump]
+		([xshift=0.15cm]laser.east) -- ++(0.45,0);
+		
+		% -------------------------------------------------
+		% Fiber
+		% -------------------------------------------------
+		\coordinate (fstart) at (2.1,0);
+		\coordinate (fend)   at (7.5,0);
+		
+		% Fiber outer jacket
+		\draw[
+		very thick,
+		fiber!70!black
+		]
+		(fstart) -- (fend);
+		
+		% Fiber core
+		\draw[
+		thick,
+		white
+		]
+		(fstart) -- (fend);
+		
+		% Fiber label
+		\node[
+		fill=none,
+		inner sep=2pt
+		] at ($(fstart)!0.5!(fend)+(0,0.42)$)
+		{\textbf{Оптическое волокно доставки}};
+		
+		% Problem highlight around fiber
+		\draw[
+		draw=problem,
+		very thick,
+		rounded corners=6pt,
+		dashed
+		]
+		($(fstart)+(-0.15,-1.4)$)
+		rectangle
+		($(fend)+(0.15,1.4)$);
+		
+		\node[
+		text=problem,
+		fill=white,
+		inner sep=2pt
+		] at ($(fstart)!0.5!(fend)+(0,-1.95)$)
+		{\footnotesize нелинейные эффекты и эффекты распространения};
+		
+		% -------------------------------------------------
+		% Arrow into optical head
+		% -------------------------------------------------
+		\draw[
+		->,
+		very thick
+		]
+		(fend) -- ++(0.7,0);
+		
+		% -------------------------------------------------
+		% Optical head
+		% -------------------------------------------------
+		\node[
+		draw,
+		rounded corners=6pt,
+		minimum width=3.2cm,
+		minimum height=2.0cm,
+		fill=head!8,
+		thick
+		] (head) at (9.6,0)
+		{\begin{tabular}{c}
+				\textbf{Оптическая голова}\\[-1mm]
+				\footnotesize нелинейное преобразование
+		\end{tabular}};
+		
+		% Internal nonlinear element
+		\node[
+		draw,
+		fill=head!15,
+		minimum width=1.0cm,
+		minimum height=0.75cm,
+		rounded corners=2pt
+		] (nl) at ([xshift=-0.15cm]head.center)
+		{НЛЭ};
+		
+		% Incoming/outgoing beam inside head
+		\draw[
+		very thick,
+		head!80!black,
+		-> 
+		]
+		([xshift=-1.25cm]head.west) -- (nl.west);
+		
+		\draw[
+		very thick,
+		head!80!black,
+		-> 
+		]
+		(nl.east) -- ([xshift=1.15cm]head.east);
+		
+		% Different-frequency output
+		\draw[
+		very thick,
+		head!70!black,
+		-> 
+		]
+		([xshift=1.15cm]head.east) -- ++(0.9,0.25);
+		
+		% Problem highlight around head
+		\draw[
+		draw=problem,
+		very thick,
+		rounded corners=8pt,
+		dashed
+		]
+		([xshift=-0.25cm,yshift=-1.7cm]head.center)
+		rectangle
+		([xshift=0.25cm,yshift=1.7cm]head.center);
+		
+		\node[
+		text=problem,
+		fill=white,
+		inner sep=2pt
+		] at ($(head.center)+(0,-1.95)$)
+		{\footnotesize нелинейное преобразование};
+		
+	\end{tikzpicture}
+	
+\end{document}
