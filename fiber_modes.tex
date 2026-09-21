@@ -1,6 +1,6 @@
 \subsection{Поперечные моды ОВ}\label{subsec:modes}
 
-Рассмотрим волновое уравнение~\eqref{eq:wave} в отсутствии нелинейной поляризации ($\mathbf{P_{\mathrm{NL}}}=0$). Данное приближение допустимо, поскольку в кварцевых ОВ нелинейная восприимчивость третьего порядка $\chi^{(3)}$ много меньше линейной восприимчивости $\chi^{(1)}$, и при не слишком высоких напряжённостях электрического поля нелинейным вкладом в суммарную поляризацию~\eqref{eq:polarization} можно пренебречь. В этом случае поперечное распределение поля моды определяется исключительно линейным откликом среды. Переходя в частотное представление, запишем волновое уравнение в спектральном представлении:
+Рассмотрим волновое уравнение~\eqref{eq:wave} в отсутствии нелинейной поляризации ($\mathbf{P_{\mathrm{NL}}}=0$). Данное приближение допустимо, поскольку в кварцевых ОВ нелинейная восприимчивость третьего порядка $\chi^{(3)}$ много меньше линейной восприимчивости $\chi^{(1)}$, и при не слишком высоких напряжённостях электрического поля нелинейным вкладом в суммарную поляризацию~\eqref{eq:polarization} можно пренебречь. В этом случае поперечное распределение поля моды определяется исключительно линейным откликом среды. Запишем волновое уравнение в спектральном представлении:
 
 \nomenclature[N]{$\widetilde{\mathbf{E}}$~[\si{\volt\second\per\meter}]}{Фурье-образ напряжённости электрического поля}
 \nomenclature[N]{$\nabla^2$}{Лапласиан}
@@ -19,7 +19,7 @@
 	\nabla \times \nabla \times \widetilde{\mathbf{E}}(\mathbf{r},\omega) = \varepsilon(\omega) \frac{\omega^2}{c^2} \widetilde{\mathbf{E}}(\mathbf{r},\omega)
 \end{equation}
 
-Воспользуемся соотношением из векторного анализа
+Воспользуемся соотношением из векторного анализа:
 
 \begin{equation}\label{eq:rotrot_identity_delta}
 	\nabla \times \nabla \times \widetilde{\mathbf{E}} = \nabla(\nabla \cdot \widetilde{\mathbf{E}}) - \nabla^2 \widetilde{\mathbf{E}},
@@ -30,7 +30,7 @@
 \begin{subequations}\label{eq:e0_estimation}
 	\begin{align}
 		\nabla^2 \widetilde{\mathbf{E}} &\sim k_0^2E_0, \label{eq:e0_estimation_a} \\
-		\nabla(\nabla \cdot \widetilde{\mathbf{E}}) &= \nabla(-\nabla\epsilon \cdot \widetilde{\mathbf{E}}/\epsilon) \sim \nabla(\dfrac{\Delta\epsilon E_0}{\delta \epsilon}) \sim \dfrac{\Delta \epsilon E_0}{\delta^2 \epsilon} \label{eq:e0_estimation_b}
+		\nabla(\nabla \cdot \widetilde{\mathbf{E}}) &= \nabla(-\nabla\epsilon \cdot \widetilde{\mathbf{E}}/\epsilon) \sim \nabla\left(\dfrac{\Delta\epsilon E_0}{\delta \epsilon}\right) \sim \dfrac{\Delta \epsilon E_0}{\delta^2 \epsilon} \label{eq:e0_estimation_b}
 	\end{align}
 \end{subequations}
 
