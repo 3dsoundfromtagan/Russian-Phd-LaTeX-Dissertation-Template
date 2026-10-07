@@ -4,56 +4,78 @@
 	\frametitle{Повышение точности обработки температурных кинетик в методе пьезоэлектрической резонансной калориметрии}
 	\includegraphics[width=\linewidth]{Presentation/images/problem_ppln}
 	
-	Методики обработки температурных кинетик\footnote{ГОСТ Р ИСО 11551-2015. Методика измерений коэффициента поглощения лазерного излучения оптическими элементами. Введ. 07.08.2015. М: Стандартинформ, 2017. 20 с.}:
+	Метод~--- лазерная калориметрия\footnote{ГОСТ Р ИСО 11551-2015. Методика измерений коэффициента поглощения лазерного излучения оптическими элементами. Введ. 07.08.2015. М: Стандартинформ, 2017. 20 с.}:
 	
 	\begin{columns}
 		\begin{column}{0.49\textwidth}			
+			\fixme{ЛК, ПРЛК}
+			
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\fixme{какая-то картинка}
+		\end{column}
+	\end{columns}	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Повышение точности обработки температурных кинетик в методе пьезоэлектрической резонансной калориметрии}
+
+	Методики обработки температурных кинетик\footnote{ГОСТ Р ИСО 11551-2015. Методика измерений коэффициента поглощения лазерного излучения оптическими элементами. Введ. 07.08.2015. М: Стандартинформ, 2017. 20 с.}:
+	
+	\begin{columns}
+		\begin{column}{0.6\textwidth}			
 			\begin{itemize}
 				\item \textbf{Экспоненциальный}: аппроксимация кинетики разогрева
 				\item \textbf{Импульсный}: экстраполяция кинетики остывания
 				\item \textbf{Градиентный}: определение коэффициента поглощения по разности производных разогрева и остывания
-			\end{itemize}			
+			\end{itemize}					
 		\end{column}
-		\begin{column}{0.45\textwidth}
+		\begin{column}{0.4\textwidth}
 			\includegraphics[width=\linewidth]{Dissertation/images/review/illustrative_example}
 			\centering
 			\footnotesize{Иллюстрация методик на примере кинетики нагрева и остывания}
 		\end{column}
 	\end{columns}	
+	
+	\vfill
+	
+	\fixme{В идеале} величина теплового источника $\overline{Q}$ для всех трёх методик совпадает:
+	
+	$ E=I=G=\overline{Q} = \alpha LP/(mc_{\text{sp}})$
+	
+	\footnotesize{$\alpha$~--- коэффициент поглощения, $L, m, c_{\text{sp}}$~--- длина, масса, удельная теплоёмкость кристалла, $P$ --- мощность излучения.}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Поправки к температурным кинетикам}
 	\framesubtitle{Влияние непостоянства температуры окружающей среды}
+	
+	\fixme{Мотивация: работаем в ограниченном объеме без термостата, так называемое солнце и ночь. Кинетика Ta любая}
 		
 	\begin{columns}
 		\begin{column}{0.55\textwidth}			
 			\begin{itemize}
-				\item Для \textbf{экспоненциальной и импульсной} методик: \fixme{что-то про Фурье}
+				\item Для \textbf{экспоненциальной и импульсной} методик: корректировка кинетики перед аппроксимацией \fixme{что-то про Фурье}
 				
-				\begin{equation*}
-					\epsilon(t) = \sum_{\omega_k} \dfrac{i \omega_k \hat{T_a}(\omega_k)}{\Gamma + i\omega_k} [\exp(-\Gamma t) - \exp(i \omega_k t)]
-					\label{eq:correction_ta}
-				\end{equation*}
+				\( \epsilon(t) = \sum_{\omega_k} \dfrac{i \omega_k \hat{T_a}(\omega_k)}{\Gamma + i\omega_k} [\exp(-\Gamma t) - \exp(i \omega_k t)] \)
 
-				\item Для \textbf{градиентной} методики: 
+				\item Для \textbf{градиентной} методики корректировка величины
+				 теплового источника: 
 				
-				\begin{equation*}
-					G_{\text{corr}} \coloneqq G - \left(\frac{d T_a}{d t} \bigg|_{t < t_0, T = T_0} - \frac{d T_a}{ dt} \bigg|_{t > t_0, T = T_0}\right)
+				\(
+					G_{\text{corr}} \coloneqq G - \left(\dfrac{d T_a}{d t} \bigg|_{t < t_0, T = T_0} - \dfrac{d T_a}{ dt} \bigg|_{t > t_0, T = T_0}\right)
 					\label{eq:g_corr_ta}
-				\end{equation*}
+				\)
 				
 				\footnotesize $\epsilon$ --- поправка к $T(t)$; $\omega_k,\hat T_a(\omega_k)$ --- гармоники $T_a(t)$;
-				$\Gamma$ --- скорость теплоотдачи; $t$ --- время.
-				
-				$G$ --- разность $dT/dt$ при $T=T_0$ (нагрев--остывание);
-				$t_0$ --- выключение лазера; $T_0$ --- фикс. температура.
+				$\Gamma$ --- скорость теплоотдачи; $t$ --- время,	$t_0$ --- выключение лазера; $T_0$ --- фикс. температура.
 			\end{itemize}			
 		\end{column}
 		\begin{column}{0.44\textwidth}
 			\includegraphics[width=\linewidth]{Dissertation/images/gradient/fourier_ambient_exp}
 			\centering
-			\footnotesize{Зависимость погрешности определения коэффициента поглощения $\alpha/\alpha_0$ от отношения скоростей теплоотдачи окружающей среды и кристалла $\Gamma_a/\Gamma$. Кривые 1--3: экспоненциальная, импульсная, градиентная методики с учётом поправки; кривые 4--6: методики без коррекции}
+			\footnotesize{Зависимость погрешности определения коэффициента поглощения $\alpha/\alpha_0$ от отношения скоростей теплоотдачи окружающей среды и кристалла $\Gamma_a/\Gamma$. 1--3: экспоненциальная, импульсная, градиентная методики с учётом поправки; 4--6: без коррекции}
 		\end{column}
 	\end{columns}	
 \end{frame}
@@ -62,7 +84,7 @@
 \begin{frame}
 	\frametitle{Поправки к температурным кинетикам}
 	\framesubtitle{Влияние непостоянства коэффициента теплоотдачи}
-	
+	\fixme{Мотивация: хз че там по обдуву образца если на воздуха. Пусть разные, но постоянные $h$ при нагреве и охлаждении}
 	\begin{columns}
 		\begin{column}{0.55\textwidth}			
 			\begin{itemize}
@@ -87,7 +109,7 @@
 		\begin{column}{0.44\textwidth}
 			\includegraphics[width=\linewidth]{Dissertation/images/gradient/heat_transfer_account_var3}
 			\centering
-			\footnotesize{Зависимость погрешности измерения коэффициента оптического поглощения $\alpha/\alpha_0$ от относительного изменения коэффициента теплоотдачи $\Delta h / h$. Обозначения: 1~--- экспоненциальный метод; 2~--- импульсный метод с коррекцией; 3~--- градиентный метод с коррекцией; 4~--- импульсный метод без коррекции; 5~--- градиентный метод без коррекции}
+			\footnotesize{Зависимость погрешности измерения коэффициента оптического поглощения $\alpha/\alpha_0$ от относительного изменения коэффициента теплоотдачи $\Delta h / h$. 1~--- экспоненциальная методика; 2,~3~--- импульсная, градиентная методики с коррекцией; 4,~5--- импульсная, градиентная методики без коррекции}
 		\end{column}
 	\end{columns}	
 \end{frame}
