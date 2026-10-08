@@ -58,14 +58,13 @@
 			\begin{itemize}
 				\item Для \textbf{экспоненциальной и импульсной} методик: корректировка кинетики перед аппроксимацией \fixme{что-то про Фурье}
 				
-				\( \epsilon(t) = \sum_{\omega_k} \dfrac{i \omega_k \hat{T_a}(\omega_k)}{\Gamma + i\omega_k} [\exp(-\Gamma t) - \exp(i \omega_k t)] \)
+				\( \epsilon(t) = \sum_{\omega_k} \dfrac{\im \omega_k \hat{T_a}(\omega_k)}{\Gamma + \im\omega_k} [\exp(-\Gamma t) - \exp(\im \omega_k t)] \)
 
 				\item Для \textbf{градиентной} методики корректировка величины
 				 теплового источника: 
 				
 				\(
 					G_{\text{corr}} \coloneqq G - \left(\dfrac{d T_a}{d t} \bigg|_{t < t_0, T = T_0} - \dfrac{d T_a}{ dt} \bigg|_{t > t_0, T = T_0}\right)
-					\label{eq:g_corr_ta}
 				\)
 				
 				\footnotesize $\epsilon$ --- поправка к $T(t)$; $\omega_k,\hat T_a(\omega_k)$ --- гармоники $T_a(t)$;
@@ -94,7 +93,6 @@
 				\begin{equation*}
 					I_{\text{corr}} := \frac{C_{\mathrm{exp}} f_{\mathrm{puls}}\left( {t_0}/2 \right)}
 					{\exp \left( C_{\mathrm{puls}} {t_0}/{2} \right) - \exp \left( -C_{\mathrm{exp}} {t_0}/{2} \right)},
-					\label{eq:barq_puls_corr}
 				\end{equation*}
 				
 				\item Для \textbf{градиентной} методики: 
