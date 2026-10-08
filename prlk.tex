@@ -92,7 +92,7 @@
 				\item Для \textbf{импульсной} методики: 
 								
 				\begin{equation*}
-					I^\natural := \frac{C_{\mathrm{exp}} f_{\mathrm{puls}}\left( {t_0}/2 \right)}
+					I_{\text{corr}} := \frac{C_{\mathrm{exp}} f_{\mathrm{puls}}\left( {t_0}/2 \right)}
 					{\exp \left( C_{\mathrm{puls}} {t_0}/{2} \right) - \exp \left( -C_{\mathrm{exp}} {t_0}/{2} \right)},
 					\label{eq:barq_puls_corr}
 				\end{equation*}
@@ -112,4 +112,49 @@
 			\footnotesize{Зависимость погрешности измерения коэффициента оптического поглощения $\alpha/\alpha_0$ от относительного изменения коэффициента теплоотдачи $\Delta h / h$. 1~--- экспоненциальная методика; 2,~3~--- импульсная, градиентная методики с коррекцией; 4,~5--- импульсная, градиентная методики без коррекции}
 		\end{column}
 	\end{columns}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Поправки к температурным кинетикам}
+	\framesubtitle{Эксперимент}
+	\fixme{Кристалл LBO, $1\cdot5\cdot5~\text{cм}^3$, $1030$~нм, определение коэффициента поглощения методом пьезоэлектрической резонансной лазерной калориметрии}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}			
+			
+			\begin{columns}
+				\begin{column}{0.5\textwidth}
+					\includegraphics[width=\linewidth]{Dissertation/images/gradient/main_no_ambient_sub}
+				\end{column}
+				
+				\begin{column}{0.5\textwidth}
+					\includegraphics[width=\linewidth]{Dissertation/images/gradient/main_fourier_ambient_imponential}
+				\end{column}
+			\end{columns}
+			
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			1 – экспоненциальный метод, 2 – импульсный метод, 3 – градиентный метод. 
+			Без поправок (слева), обе поправки (справа)			
+		\end{column}
+	\end{columns}	
+	
+	\centering
+	
+	\small{
+	\begin{tabular}{|c|c|}
+		\hline
+		& Макс. различие между методиками, \% \\
+		\hline
+		Без поправок & 23 \\
+		\hline
+		Учёт $\dfrac{dT_a}{dt}$ & 19 \\
+		\hline
+		Учёт $h$ & 16 \\
+		\hline
+		Обе поправки & 11 \\
+		\hline
+	\end{tabular}
+}
+	
+	
 \end{frame}
