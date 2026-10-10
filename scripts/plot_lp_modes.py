@@ -30,10 +30,10 @@ max_plot_radius = 9   # microns
 #     max_val = np.max(np.abs(mode_plot))
 #     plt.imshow(mode_plot, cmap = lpmodes.ampcol(), vmin = -max_val, vmax = max_val)
 
-#%% plot many moder for disser
+#%% plot 2 modes for preza
 
-n_rows = 3
-n_cols = 4
+n_rows = 1
+n_cols = 2
 
 fig = plt.figure(figsize=(15, 9), dpi=300)
 gs = gridspec.GridSpec(n_rows, n_cols, wspace=0.05, hspace=0.05)
@@ -47,18 +47,17 @@ for idx, mode in enumerate(sorted(modes, key=lambda mode: mode.n_eff, reverse=Tr
     max_val = np.max(np.abs(mode_plot))
     ax.imshow(mode_plot, cmap=lpmodes.ampcol(), vmin=-max_val, vmax=max_val)
     ax.axis('off')
-    ax.set_title(f"LP$_{{{mode.l}{mode.m}}}$", fontsize=24, pad=0, y=0.95)
+    ax.set_title(f"LP$_{{{mode.l}{mode.m}}}$", fontsize=85, pad=0, y=0.95)
 
-plt.subplots_adjust(left=0.00, right=1.00, top=0.98, bottom=0.00, wspace=0.05, hspace=0.05)
+# plt.subplots_adjust(left=0.00, right=1.00, top=0.98, bottom=0.00, wspace=0.05, hspace=0.05)
 plt.show()
 
 fig.savefig(r'../../disser/Dissertation/images/review/lp_modes_01_11_preza.pdf', 
             dpi=300, bbox_inches='tight', pad_inches=0.0)
+#%% plot many moder for disser
 
-#%% plot 2 modes for preza
-
-n_rows = 1
-n_cols = 2
+n_rows = 3
+n_cols = 4
 
 fig = plt.figure(figsize=(15, 9), dpi=300)
 gs = gridspec.GridSpec(n_rows, n_cols, wspace=0.05, hspace=0.05)
