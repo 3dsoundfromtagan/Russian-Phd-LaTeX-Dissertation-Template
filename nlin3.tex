@@ -3,13 +3,30 @@
 \begin{frame}
 	\frametitle{Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
 	\includegraphics[width=\linewidth]{Presentation/images/problem_fiber}
-	\fixme{аза про чввсМотивация, задача нарисовать жопу. процесс имеет место в ОВ, далее про чвс}
-	\begin{columns}[t]
-		\begin{column}{0.49\textwidth}
-			\fixme{хз}
+	\begin{columns}
+		\begin{column}{0.35\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{Dissertation/images/review/fwm_principle}
+			
+			\footnotesize{Принципиальная схема процесса ЧВС. Из закона сохранения энергии следует, что $\omega_1+\omega_2=\omega_3+\omega_4$}
 		\end{column}
-		\begin{column}{0.49\textwidth}
-			\fixme{что говорить. мб ограничения мощи или длині волокна...}
+		\begin{column}{0.65\textwidth}
+			Условие фазового синхронизма:
+			
+			\begin{equation*}
+				\Delta k ={{n_3}\omega_3}/{c}+{{n_4}\omega_4}/{c}-{{n_1}\omega_1}/{c}-{{n_2}\omega_2}/{c}
+				\label{eq:deltaK}
+			\end{equation*}
+			
+			${n_{i}}$~--- эффективный модовый показатель преломления, $c$~--- скорость света в вакууме.
+			
+			Реализация:
+			
+			\begin{itemize}
+				\item Одномодовый (ОМ) ЧВС: аномальная дисперсия при $\lambda > 1300$~нм
+				
+				\item Межмодовый (ММ) ЧВС: фазовый синхронизм достигается за счёт разности эффективных показателей преломления взаимодействующих мод в спектральной области $\lambda\sim1$~мкм.
+			\end{itemize}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -26,32 +43,41 @@
 		\begin{columns}
 			\begin{column}{0.76\textwidth}			
 				\begin{align*}
-					\fixme{добавить цифры и мб цвет}
-					\text{ММ ЧВС:}~\LPoi^{1030}+\LPii^{1030}&\longrightarrow \LPoi^{1003}+\LPii^{1059}\\
-					\text{ОМ ЧВС:}~\LPoi^{1030}+\LPoi^{1562}&\longrightarrow \LPoi^{1003}+\LPoi^{1629}	
+					\color{darkred}\text{(1)~ММ ЧВС:}~\LPoi^{1030}+\LPii^{1030}&\color{darkred}\longrightarrow \LPoi^{1003}+\LPii^{1059}\\
+					\color{darkblue}\text{(2)~ОМ ЧВС:}~\LPoi^{1030}+\LPoi^{1562}&\color{darkblue}\longrightarrow \LPoi^{1003}+\LPoi^{1629}	
 				\end{align*}			
 			\end{column}
 			\begin{column}{0.24\textwidth}
-				\includegraphics[width=0.7\linewidth]{Dissertation/images/review/lp_modes_01_11_preza.pdf}
+				\includegraphics[width=0.65\linewidth]{Dissertation/images/review/lp_modes_01_11_preza.pdf}
 			\end{column}
 		\end{columns}
 	\end{center}
-	\hfill
-	
-	\footnotesize{
-	\begin{enumerate}
-		\item Существование ММЧВС:		
-		\begin{itemize}
-		\footnotesize
-			\item Спектр при известном модовом составе;
-			\item Модовый состав при известном спектре;
-			\fixme{Доп. слайды по пп. 1 и 2 + агрессивная реклама}
-		\end{itemize}
-		
-		\item Взаимное влияние ММЧВС и ОМЧВС в эксперименте;
-		\item Численный расчёт.
-	\end{enumerate}	
-	}
+
+
+	\footnotesize
+
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\footnotesize
+			\begin{enumerate}
+				\item Существование ММЧВС:
+				\begin{itemize}
+					\footnotesize
+					\item Спектр при известном модовом составе;
+					\item Модовый состав при известном спектре;
+					\fixme{Доп. слайды по пп. 1 и 2 + агрессивная реклама}
+				\end{itemize}
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\footnotesize
+			\begin{enumerate}
+				\setcounter{enumi}{1}   % начинаем с 2
+				\item Взаимное влияние ММЧВС и ОМЧВС в эксперименте;
+				\item Численный расчёт.
+			\end{enumerate}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
