@@ -1,14 +1,19 @@
 % Общие стили оформления.
 % Возможные варианты значений ищите в описании библиотеки beamer
 \usetheme{Pittsburgh}
-\usecolortheme{whale}
+\usecolortheme{default}
 
 % \usetheme[secheader]{Boadilla}
 % \usecolortheme{seahorse}
 
+% Для выравнивания текста по ширине столбца
+\usepackage{ragged2e}
+
+\setbeamertemplate{frametitle}[default][center]
+
 % Размер полей слайдов
-\setbeamersize{text margin left=1cm,%
-               text margin right=1cm}
+\setbeamersize{text margin left=0.7cm,%
+               text margin right=0.7cm}
 
 % выключение кнопок навигации
 \beamertemplatenavigationsymbolsempty
@@ -62,13 +67,14 @@
 \setbeamertemplate{footline}{
     \leavevmode%
     \hbox{%
+  
         \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{}%
             % И. О. Фамилия, Организация кратко
-            \thesisAuthorShort, \thesisOrganizationShort
+%            \thesisAuthorShort, \thesisOrganizationShort
         \end{beamercolorbox}%
         \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{}%
             % Город, 20XX
-            \thesisCity, \thesisYear
+%            \thesisCity, \thesisYear
         \end{beamercolorbox}%
         \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{}%
             Стр. \insertframenumber{} из \inserttotalframenumber \hspace*{2ex}
