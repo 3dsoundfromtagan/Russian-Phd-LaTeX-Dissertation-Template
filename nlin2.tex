@@ -25,24 +25,28 @@
 			\textbf{Зачем это нужно:}
 			\begin{itemize}
 				\item понять формирование $\chi^{(2)}$-решётки;
-				\item верифицировать теоретические модели;
-				\item создавать источники на ГВГ или подавлять генерацию.
+				\item верифицировать теоретические модели ГВГ в ОВ;
+				\item управлять эффективностью ГВГ.
 			\end{itemize}
 		\end{column}
 	\end{columns}
 	\footnotetext{\scriptsize Osterberg U, Margulis W. Dye laser pumped by Nd:YAG laser pulses frequency doubled in a glass optical fiber // Optics Letters. – 1986. Vol. 11, no. 8 – P. 516–518}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 	\framesubtitle{Кривые фазового синхронизма при ГВГ в оптических волокнах}
 	\frametitle{Модель}
 
-	Динамика ГВГ в ОВ [Антонюк, 2001]:
+	
+	\vspace{0.5cm}
+	
+	Динамика ГВГ в ОВ\footnote{\scriptsize Антонюк Б. П., Антонюк В. Б. Самоорганизация возбуждений в германосиликатных волоконных световодах и ее роль в генерации второй гармоники //Успехи физических наук. – 2001. – Т. 171. – №. 1. – С. 61-78.}:
+	
 	
 	\begin{columns}
-		\begin{column}{0.6\textwidth}	
-			\scalebox{0.99}{%
-				\begin{minipage}{\textwidth}
+		\begin{column}{0.52\textwidth}	
+		\vspace{-0.6cm}
+			\only<1>{
 				\begin{equation*}
 					\begin{aligned}
 						\frac{\partial A_1}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{\omega}}\left( A_0^{\ast} A_1^{\ast} A_2 + \gamma_{11} A_1 A_1^{\ast} A_1 + 2\gamma_{12} A_2 A_2^{\ast} A_1\right), \\
@@ -50,11 +54,21 @@
 						\frac{\partial A_{0}}{\partial t} &= \alpha_2 \left|A_2\right|^2 \cdot \left(u e^{\im\left[\arg{A_2}-2\arg{A_1}\right]}-A_{0}\right).
 					\end{aligned}
 				\end{equation*}
-			\end{minipage}
-		}
+			}	
+			
+			\only<2->{
+				\begin{equation*}
+					\begin{aligned}
+						\frac{\partial A_1}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{\omega}}\left( A_0^{\ast} A_1^{\ast} A_2 + \highlight{\gamma_{11} A_1 A_1^{\ast} A_1 + 2\gamma_{12} A_2 A_2^{\ast} A_1}\right), \\
+						\frac{\partial A_2}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{2\omega}}\left(A_0 A_1^{2}  + \highlight{2\gamma_{12} A_1 A_1^{\ast} A_2 + \gamma_{22} A_2 A_2^{*} A_2} \right), \\
+						\frac{\partial A_{0}}{\partial t} &= \alpha_2 \left|A_2\right|^2 \cdot \left(u e^{\im\left[\arg{A_2}-2\arg{A_1}\right]}-A_{0}\right).
+					\end{aligned}
+				\end{equation*}
+			}	
+			
 		
 		\vfill
-		\footnotesize
+		\small
 		$A_0$, $A_1$, $A_2$ --- комплексные амплитуды квазистатического поля, поля накачки и поля второй гармоники;
 		
 		$c$ --- скорость света, $\omega$ --- угловая частота накачки;
@@ -62,8 +76,8 @@
 		$n_{\omega}, n_{2\omega}$ --- показатели преломления ОВ на частотах накачки и второй гармоники;		
 		
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\footnotesize
+		\begin{column}{0.42\textwidth}
+			\small
 			
 			$u= 5~\text{статВ/см}\rightarrow1.5$кВ/см --- амплитуда насыщенного квазистатического поля, определяет максимальную эффективность ГВГ;
 			
@@ -71,7 +85,7 @@
 			
 			$\gamma_{ij}$, $i,j \in [1,2]$ --- коэффициенты, пропорциональные интегралам перекрытия мод. 
 						
-			Амплитуды полей соответствуют начальным пиковым мощностям накачки $P_1(0) = 4$~кВт и второй гармоники $P_2(0) = 500$~нВт. \fixme{устно отдать должное Антонюку + указать керровские слагаемые}
+			Амплитуды полей соответствуют начальным пиковым мощностям накачки $P_1(0) = 4$~кВт и второй гармоники $P_2(0) = 500$~нВт.
 		\end{column}
 	\end{columns}	
 \end{frame}
@@ -97,15 +111,15 @@
 		\end{column}
 		\begin{column}{0.54\textwidth}
 			\centering
-			\includegraphics[width=0.9\linewidth]{Dissertation/images/fibershg/scheme}
+			\includegraphics[width=0.9\linewidth]{Presentation/images/scheme}
 			
-			\footnotesize{Экспериментальная установка. M: дихроичные зеркала; PM$_1$, PM$_2$: измерители мощности}
+			\footnotesize{Экспериментальная установка.  ИМ$_{1,2}$: измерители мощности}
 			
 			\vfill
 			
 			\includegraphics[width=0.9\linewidth]{Dissertation/images/fibershg/kinetic}
 			
-			\footnotesize{Эффективности ГВГ от времени. Оранжевый: эксперимент, синий: моделирование.}
+			\footnotesize{Эффективности ГВГ от времени: \color{defcolor1}{эксперимент}, \color{defcolor2}{моделирование}.}
 		\end{column}
 	\end{columns}	
 \end{frame}
@@ -115,9 +129,11 @@
 	\frametitle{Результаты}
 	
 	\centering
-	\includegraphics[width=0.8\linewidth]{Dissertation/images/fibershg/curves}
+	\includegraphics[width=0.9\linewidth]{Dissertation/images/fibershg/curves}
 	
-	\footnotesize{КФС, измеренные на различных этапах записи \(\chi^{(2)}\)-решётки. Синие и оранжевые кривые соответствуют спектральному и температурному фазовым синхронизмам соответственно, зелёные~--- результат моделирования}
+	\vspace{-0.4cm}
+	
+	\footnotesize{КФС, измеренные на различных этапах записи \(\chi^{(2)}\)-решётки. {\color{defcolor1}{Спектральные}}, {\color{defcolor2}{температурные}} КФС, \color{defcolor3}{модель}.}
 	
 \end{frame}
 
@@ -125,25 +141,41 @@
 	\frametitle{Кривые фазового синхронизма при ГВГ в оптических волокнах}
 	\framesubtitle{Результаты}
 	
+	
 	\begin{columns}
-	\begin{column}{0.27\textwidth}	
+	
+	\begin{column}{0.32\textwidth}	
+		\small
+		\vspace{0.2cm}
+		
+		Кинетики сдвига фазового синхронизма (СФС) (a),
+		
+		\vspace{1.2cm}		
+		
+		ширины кривой на половине высоты (FWHM) (б),
+		
+		\vspace{1.2cm}
+		
+		пиковой эффективности в процессе формирования \(\chi^{(2)}\)-решётки (в) ({\color{defcolor1}{Спектральные}}, {\color{defcolor2}{температурные}} КФС, \color{defcolor3}{модель}.)
+	\end{column}
+	
+	\begin{column}{0.25\textwidth}	
 		\includegraphics[width=\linewidth]{Presentation/images/mc_dk_2preza.png}
 	\end{column}
-	\begin{column}{0.73\textwidth}
+	\begin{column}{0.42\textwidth}
 			
-		\footnotesize{Кинетики сдвига фазового синхронизма (СФС) (a), ширины кривой на половине высоты (FWHM) (б) и пиковой эффективности в процессе формирования \(\chi^{(2)}\)-решётки (в). Синий и оранжевый — эксперимент, зелёный — модель.
-		
 		
 		\begin{itemize}
+			\setlength{\itemsep}{0.5em}
 			\item Монотонная зависимость СФС, FWHM, пиковой эффективности от времени
 			
 			\item Несимметричность КФС
 		
-			\item \fixme{Выход эффективности ГВГ на полку (40 ч) раньше, чем выход на полку указанных параметров (60 ч)}
+			\item Выход эффективности ГВГ на постоянный уровень ($\sim40$~ч) раньше, чем для указанных параметров ($\sim60$~ч)
 			
-			\item \fixme{Основа для дальнейших идей как по увеличению эффективности ГВГ, так и по подавлению эффекта}		
+			\item Основа для дальнейших идей как по увеличению эффективности ГВГ, так и по подавлению эффекта
 		\end{itemize}
-	}		
+			
 	\end{column}
 \end{columns}	
 
@@ -152,9 +184,10 @@
 \end{frame}
 
 \begin{frame}
+	\justifying 
 	\framesubtitle{Кривые фазового синхронизма при ГВГ в оптических волокнах}
 	\frametitle{Положение, выносимое на защиту}
 	
-	<<В процессе оптического полинга германосиликатного оптического волокна излучением ближнего ИК-диапазона ширина кривых фазового синхронизма при генерации второй гармоники монотонно уменьшается, а их пик сдвигается к расстройке, определяемой фазовой самомодуляцией и кросс-модуляцией. При этом выход эффективности генерации второй гармоники на постоянный уровень наступает до завершения эволюции кривых фазового синхронизма, поскольку уменьшение ширины кривых фазового синхронизма и смещение их пиковых значений компенсируются одновременным ростом пиковой эффективности преобразования.>>	
+	В процессе оптического полинга германосиликатного оптического волокна излучением ближнего ИК-диапазона ширина кривых фазового синхронизма при генерации второй гармоники монотонно уменьшается, а их пик сдвигается к расстройке, определяемой фазовой самомодуляцией и кросс-модуляцией. При этом выход эффективности генерации второй гармоники на постоянный уровень наступает до завершения эволюции кривых фазового синхронизма, поскольку уменьшение ширины кривых фазового синхронизма и смещение их пиковых значений компенсируются одновременным ростом пиковой эффективности преобразования.
 \end{frame}
 

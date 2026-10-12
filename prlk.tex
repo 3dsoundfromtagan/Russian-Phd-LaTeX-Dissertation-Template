@@ -2,21 +2,59 @@
 
 \begin{frame}
 	\frametitle{Повышение точности обработки температурных кинетик в методе пьезоэлектрической резонансной калориметрии}
-	\includegraphics[width=\linewidth]{Presentation/images/problem_ppln}
 	
-	\fixme{Актуальность: мало 3 мкм <- нарушение условий фазового синхронизма <- разогрев кристалла <- оптическое поглощение <- необходимость его точного определения}
+	\begin{center}
+		\centering
+		\includegraphics[width=0.7\linewidth]{Presentation/images/problem_ppln}
+	\end{center}
 	
-	Метод~--- лазерная калориметрия\footnote{ГОСТ Р ИСО 11551-2015. Методика измерений коэффициента поглощения лазерного излучения оптическими элементами. Введ. 07.08.2015. М: Стандартинформ, 2017. 20 с.}:
+%	\fixme{Актуальность: мало 3 мкм <- нарушение условий фазового синхронизма <- разогрев кристалла <- оптическое поглощение <- необходимость его точного определения}
 	
-	\begin{columns}
-		\begin{column}{0.49\textwidth}			
-			\fixme{ЛК, ПРЛК}
+%	Метод~--- лазерная калориметрия\footnote{ГОСТ Р ИСО 11551-2015. Методика измерений коэффициента поглощения лазерного излучения оптическими элементами. Введ. 07.08.2015. М: Стандартинформ, 2017. 20 с.}:
+	\vspace{-0.2cm}
+	
+	\begin{columns}[t]
+		\begin{column}{0.48\textwidth}	
+			\small		
+			Лазерная калориметрия (ЛК):
+			
+			\begin{center}
+				\centering
+				\includegraphics[height=2.5cm]{Presentation/images/lk}
+			\end{center}
+			
+			\vspace{-0.5cm}
+			
+			\begin{itemize}
+				\item Нагрев образца излучением $P$, температура $T$: внешний термодатчик TS
+				\item Ограничения: теплопроводность образца, рассеянное излучение, тепловой контакт
+			\end{itemize}
+
 			
 		\end{column}
-		\begin{column}{0.45\textwidth}
-			\fixme{какая-то картинка}
+		\begin{column}{0.52\textwidth}
+			\small
+			Пьезоэлектрическая резонансная ЛК (ПРЛК):
+			
+			\begin{center}
+				\centering
+				\includegraphics[height=2.5cm]{Presentation/images/prlc}
+			\end{center}
+			
+			\vspace{-0.5cm}
+			
+			\begin{itemize}
+				\item Акустические моды н-о кристаллов возбуждаются внешним РЧ полем (пьезоэффект)
+				
+				\item $T$ определяется по сдвигу частоты мод
+				
+				\item После калибровки сдвиг пересчитывается в $T$
+				
+				\item Даёт среднюю температуру кристалла\footnotemark
+			\end{itemize}
 		\end{column}
 	\end{columns}	
+	\footnotetext{\scriptsize G. Aloyan, N. Kovalenko, I. Grishchenko, A. Konyashkin, and O. Ryabushkin, “Acoustic resonance spectroscopy of piezoelectric crystals under non-uniform heating,” Acoustical Physics, vol. 68, no. 5, pp. 427–434, 2022}
 \end{frame}
 
 
@@ -44,10 +82,17 @@
 				e^{-\Gamma t}(e^{\Gamma t_0} - 1), & t > t_0.
 			\end{cases}
 			\]
+			
+			Аппроксимация:
+			
+			\[
+				f(t) = A + Be^{-Ct}
+			\]
+			
 		\end{column}'
 		
 		\begin{column}{0.5\textwidth}
-			\footnotesize{$\overline{Q} \approx \alpha LP/(mc_{\text{sp}})$ --- усреднённый по образцу тепловой источник, связанный с поглощением лазерного излучения при малом оптическом поглощении,
+			\small{$\overline{Q} = \alpha LP/(mc_{\text{sp}})$ --- усреднённый по образцу тепловой источник, связанный с поглощением лазерного излучения при малом оптическом поглощении,
 				
 			$\alpha$~--- коэффициент поглощения,
 			
@@ -61,46 +106,47 @@
 			
 			$S$ --- площадь поверхности образца,
 			
-			$T_a$ --- температура окружающей среды.}
+			$T_a$ --- температура окружающей среды,
+			
+			$t_0$ --- выключение лазера}
 		\end{column}
 		
-	\end{columns}
-
-	
-	В ПРЛК измеряемая температура соответствует средней температуре кристалла [Aloyan, 2022]
-%	\footnote{G. Aloyan, N. Kovalenko, I. Grishchenko, A. Konyashkin, and O. Ryabushkin, “Acoustic resonance spectroscopy of piezoelectric crystals under non-uniform heating,” Acoustical Physics, vol. 68, no. 5, pp. 427–434, 2022}
-	
+	\end{columns}	
 \end{frame}
 
 
 \begin{frame}
-	\frametitle{Повышение точности обработки температурных кинетик в методе пьезоэлектрической резонансной калориметрии}
-
-	Методики обработки температурных кинетик:
-	\fixme{написать выражения для Е И, Г}
-	
+	\frametitle{Повышение точности обработки температурных кинетик в методе пьезоэлектрической резонансной калориметрии}	
 	\begin{columns}
-		\begin{column}{0.6\textwidth}			
+		\small
+		\begin{column}{0.5\textwidth}	
+			Методики обработки температурных кинетик:		
 			\begin{itemize}
-				\item \textbf{Экспоненциальный}: аппроксимация кинетики разогрева;
-				\item \textbf{Импульсный}: экстраполяция кинетики остывания;
-				\item \textbf{Градиентный}: определение коэффициента поглощения по разности производных разогрева и остывания.
+				\item \textbf{Экспоненциальная}: аппроксимация кинетики разогрева \[E = A_{\text{exp}}C_{\text{exp}} = \overline{Q};\]
+				\item \textbf{Импульсная}: экстраполяция кинетики остывания \[I = \frac{C_{\text{puls}}f(t_0/2)}{2\sinh(C_{\text{puls}}t_0/2)} = \overline{Q};\]
+				\item \textbf{Градиентная}: разность производных разогрева и остывания: \[G = \dfrac{d T}{d t} \bigg|_{t < t_0, T = T_0} - \dfrac{d T}{d t} \bigg|_{t > t_0, T = T_0}= \overline{Q}.\]
 			\end{itemize}					
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[width=\linewidth]{Dissertation/images/review/illustrative_example}
-			\centering
-			\footnotesize{Иллюстрация методик на примере кинетики нагрева и остывания}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\centering
+				\includegraphics[width=0.8\linewidth]{Presentation/images/illustrative_example}
+				\footnotesize{Иллюстрация методик на примере кинетики нагрева и остывания}
+			\end{center}
+						
+			\footnotesize{
+					
+			$A_{\text{exp}}$, $C_{\text{exp, puls}}$ --- параметры аппроксимации $f(t) = A + Be^{-Ct}$,
+			
+			$E, I, G$ --- величины тепловых источников по экспоненциальной, импульсной, градиентной методикам}
 		\end{column}
 	\end{columns}	
 	
 	\vfill
+	\normalsize
+	В отсутствие погрешностей величина теплового источника $\overline{Q}$ для всех трёх методик совпадает.
 	
-	В отсутствие погрешностей величина теплового источника $\overline{Q}$ для всех трёх методик совпадает:
-	
-	$ E=I=G=\overline{Q} = \alpha LP/(mc_{\text{sp}})$
-	
-	\footnotesize{$\alpha$~--- коэффициент поглощения, $L, m, c_{\text{sp}}$~--- длина, масса, удельная теплоёмкость кристалла, $P$ --- мощность излучения.}
+%	\footnotesize{$\alpha$~--- коэффициент поглощения, $L, m, c_{\text{sp}}$~--- длина, масса, удельная теплоёмкость кристалла, $P$ --- мощность излучения.}
 \end{frame}
 
 \begin{frame}
@@ -124,7 +170,7 @@
 				\)
 				
 				\footnotesize $\epsilon$ --- поправка к $T(t)$; $\omega_k,\hat T_a(\omega_k)$ --- гармоники $T_a(t)$;
-				$\Gamma$ --- скорость теплоотдачи; $t$ --- время,	$t_0$ --- выключение лазера; $T_0$ --- фикс. температура.
+%				$\Gamma$ --- скорость теплоотдачи; $t$ --- время,	$t_0$ --- выключение лазера; $T_0$ --- фикс. температура.
 			\end{itemize}			
 		\end{column}
 		\begin{column}{0.44\textwidth}

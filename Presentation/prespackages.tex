@@ -21,6 +21,14 @@
 \xpatchcmd{\itemize}{\def\makelabel}
 {\setlength{\itemsep}{-1pt}\def\makelabel}{}{}
 
+% выделение формул
+\newcommand{\highlight}[1]{%
+	\tikz[baseline=(X.base)]{
+		\node[draw=darkred, line width=1.2pt, rounded corners=4pt, 
+		fill=white, inner sep=3pt] (X) {$\displaystyle #1$};
+	}%
+}
+
 \graphicspath{{images/}{Presentation/images/}} % папки с графикой
 
 \DeclareRobustCommand{\fixme}{\textcolor{red}}       % решаем проблему превращения названия цвета в результате \MakeUppercase, http://tex.stackexchange.com/a/187930, \DeclareRobustCommand protects \todo from expanding inside \MakeUppercase

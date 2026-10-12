@@ -116,7 +116,7 @@ plt.annotate('', xy=(touching_time_heat, touching_temp),
              arrowprops={'arrowstyle' : '<|-|>', 
                          'connectionstyle' : 'arc3,rad=-0.65',
                          'facecolor' : 'black'})
-plt.text(65, 0.45, 'Градиентный', bbox={'boxstyle' : 'round4', 
+plt.text(65, 0.45, 'Градиентная', bbox={'boxstyle' : 'round4', 
                                       'facecolor' : 'white',
                                       'edgecolor' : 'none',
                                       'pad' : 0.2},
@@ -150,10 +150,10 @@ plt.annotate('$T(t_0/2)$', (th / 2 * 0.24,  T0 / 2.2), color=colors["cool"],
              size = 'medium')
 
 #Exponential and pulsed
-plt.annotate('Экспоненциальный', ((th + tc) * 0.504,  T0 * 0.65), size = 'medium',
+plt.annotate('Экспоненциальная', ((th + tc) * 0.504,  T0 * 0.65), size = 'medium',
             color = colors["heat"])
 
-plt.annotate('Импульсный', (th / 1.65, T0 * 0.945), size = 'medium',
+plt.annotate('Импульсная', (th / 1.65, T0 * 0.945), size = 'medium',
             color = colors["cool"])
 
 #t0
@@ -169,5 +169,5 @@ plt.xlim(0, th+tc)
 plt.ylim(0, exp_cool(th/2, tau=tau, T0=T0, t_cool_start=th))
 # plt.tight_layout()
 plt.subplots_adjust(left = 0.14, bottom=0.17, top = 0.99)
-# plt.savefig(r'../../disser/Dissertation/images/review/illustrative_example.pdf')
+# plt.savefig(r'../../disser/Presentation/images/illustrative_example.pdf')
 # fig.savefig(r'../../disser/Dissertation/images/imfwm/dfg_eff_plot.pdf')
