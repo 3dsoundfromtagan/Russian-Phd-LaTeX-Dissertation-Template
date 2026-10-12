@@ -8,11 +8,18 @@
 \usepackage{pgfpages}
 \usepackage{esint} % various fancy integral symbols
 
+%выравнивание по ширине столбца ВЕЗДЕ
 \usepackage{etoolbox}
 \AtBeginEnvironment{column}{\justifying}
 \AtBeginEnvironment{frame}{\justifying}
 \apptocmd{\item}{\justifying}{}{}
 \addtobeamertemplate{block begin}{}{\justifying}
+
+% неширокий itemize
+%\AtBeginEnvironment{itemize}{\setlength{\itemsep}{200pt}}
+\usepackage{xpatch}
+\xpatchcmd{\itemize}{\def\makelabel}
+{\setlength{\itemsep}{-1pt}\def\makelabel}{}{}
 
 \graphicspath{{images/}{Presentation/images/}} % папки с графикой
 
