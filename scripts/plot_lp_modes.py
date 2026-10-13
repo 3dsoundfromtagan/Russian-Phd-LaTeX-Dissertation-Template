@@ -20,7 +20,7 @@ modes = lpmodes.find_modes(core_radius, core_n, cladding_n, wavelength)
 
 
 grid_size = 300        # pixels
-max_plot_radius = 9   # microns
+max_plot_radius = 6   # microns
 
 # for mode in modes:
 
@@ -43,9 +43,9 @@ for idx, mode in enumerate(sorted(modes, key=lambda mode: mode.n_eff, reverse=Tr
     col = idx % n_cols
     ax = fig.add_subplot(gs[row, col])
     
-    mode_plot = mode.plot_amplitude(grid_size, max_plot_radius)
+    mode_plot = mode.plot_intensity(grid_size, max_plot_radius)
     max_val = np.max(np.abs(mode_plot))
-    ax.imshow(mode_plot, cmap=lpmodes.ampcol(), vmin=-max_val, vmax=max_val)
+    ax.imshow(mode_plot, cmap='gray_r')
     ax.axis('off')
     ax.set_title(f"LP$_{{{mode.l}{mode.m}}}$", fontsize=85, pad=0, y=0.95)
 

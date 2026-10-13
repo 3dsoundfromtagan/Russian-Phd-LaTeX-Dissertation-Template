@@ -13,6 +13,47 @@
 \end{frame}
 
 \begin{frame}
+	\framesubtitle{Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
+	\frametitle{Математическая модель ЧВС}
+	Связанные уравнения для амплитуд\footnote{Agrawal, G. P. Nonlinear Fiber Optics. 6th ed. London ; San Diego, CA : Academic Press, 2019. Eqs. (10.2.2)–(10.2.5).}:
+	\begin{columns}
+		\begin{column}{0.48\textwidth}
+			\scalebox{0.72}{%
+				\begin{minipage}{\textwidth}
+					\begin{equation*}
+						\left\{\begin{array}{@{}l@{}}
+							\dfrac{dA_1}{dz}=\dfrac{\im n_{nl} \omega_1}{c}\!\left[\left(f_{11}\left|A_1\right|^2+\sum\limits_{k\neq1}f_{1k}\left|A_k\right|^2\right)\!A_1+2f_{1234}A_2^{\ast}A_3A_4\e^{\im \Delta k z}\right]\!, \vspace{0.05cm} \\ 
+							\dfrac{dA_2}{dz}=\dfrac{\im n_{nl} \omega_2}{c}\!\left[\left(f_{22}\left|A_2\right|^2+\sum\limits_{k\neq2}f_{2k}\left|A_k\right|^2\right)\!A_2+2f_{2134}A_1^{\ast}A_3A_4\e^{\im \Delta k z}\right], \vspace{0.05cm} \\
+							\dfrac{dA_3}{dz}=\dfrac{\im n_{nl} \omega_3}{c}\!\left[\left(f_{33}\left|A_3\right|^2+\sum\limits_{k\neq3}f_{3k}\left|A_k\right|^2\right)\!A_3+2f_{3412}A_4^{\ast}A_2A_1\e^{-\im \Delta k z}\right], \vspace{0.05cm} \\
+							\dfrac{dA_4}{dz}=\dfrac{\im n_{nl} \omega_4}{c}\!\left[\left(f_{44}\left|A_4\right|^2+\sum\limits_{k\neq4}f_{4k}\left|A_k\right|^2\right)\!A_4+2f_{4312}A_3^{\ast}A_2A_1\e^{-\im \Delta k z}\right].
+						\end{array}\right.\,	
+					\end{equation*}
+				\end{minipage}
+			}
+		\end{column}
+		\begin{column}{0.52\textwidth}
+			$A_{{i}}$~--- амплитуды взаимодействующих волн с циклическими частотами $\omega_i$;
+			
+			$n_{nl}$~--- нелинейный показатель преломления;
+			
+			$f_{ij}\text{ и }f_{ijkl}$ $\left(i,j,k,l\in\left[1,\,4\right]\right)$~--- интегралы перекрытия между поперечными модами ОВ и их парами соответственно;
+			
+							$z$~--- продольная координата;
+			
+			$\Delta k$~--- волновая расстройка;
+			
+			${n_{i}}$~--- эффективный модовый показатель преломления;
+			
+			$c$~--- скорость света в вакууме
+		\end{column}
+	\end{columns}
+	
+	\vfill
+
+\end{frame}
+
+
+\begin{frame}
 	\frametitle{Модель экситонов с переносом заряда}
 	\framesubtitle{Кривые фазового синхронизма при ГВГ в оптических волокнах}
 	

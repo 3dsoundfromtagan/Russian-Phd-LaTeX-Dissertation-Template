@@ -1,8 +1,12 @@
 \section{Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
 
 \begin{frame}
-	\frametitle{Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
-	\includegraphics[width=\linewidth]{Presentation/images/problem_fiber}
+	\frametitle{1. Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
+	
+	\begin{center}
+		\centering
+		\includegraphics[width=0.8\linewidth]{Presentation/images/problem_fiber}
+	\end{center}
 
 	\begin{columns}
 		\begin{column}{0.35\textwidth}
@@ -13,6 +17,8 @@
 		\end{column}
 		\begin{column}{0.65\textwidth}
 			Условие фазового синхронизма:
+			
+			\vspace{-0.3cm}
 			
 			\begin{equation*}
 				\Delta k ={{n_3}\omega_3}/{c}+{{n_4}\omega_4}/{c}-{{n_1}\omega_1}/{c}-{{n_2}\omega_2}/{c}
@@ -26,24 +32,29 @@
 			\begin{itemize}
 				\item Одномодовый (ОМ) ЧВС: аномальная дисперсия при $\lambda > 1300$~нм
 				
-				\item Межмодовый (ММ) ЧВС: фазовый синхронизм достигается за счёт разности эффективных показателей преломления взаимодействующих мод в спектральной области $\lambda\sim1$~мкм.
+				\item Межмодовый (ММ) ЧВС: фазовый синхронизм  за счёт разности $n_i$ в спектральной области $\lambda\sim1$~мкм.
 			\end{itemize}
 		\end{column}
 	\end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
+	\frametitle{1. Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
 	
 	\begin{center}
-		\includegraphics[width=0.85\linewidth]{Dissertation/images/imfwm/problem_2conf_1.pdf}
+		\centering
+		
+		\includegraphics[width=0.78\linewidth]{Dissertation/images/imfwm/problem_2conf_1.pdf}
 		
 		\footnotesize{Измеренные спектры двухволнового лазера. $L$: длина ОВ}
 		
+	\end{center}
+		
 		\begin{columns}
-			\begin{column}{0.76\textwidth}			
+			\begin{column}{0.76\textwidth}		
+				\small	
 				\begin{align*}
-					\color{darkblue}\text{(1)~ММ ЧВС:}~\LPoi^{1030}+\LPii^{1030}&\color{darkblue}\longrightarrow \LPoi^{1003}+\LPii^{1059}\\
+					\color{darkgreen}\text{(1)~ММ ЧВС:}~\LPoi^{1030}+\LPii^{1030}&\color{darkgreen}\longrightarrow \LPoi^{1003}+\LPii^{1059}\\
 					\color{darkred}\text{(2)~ОМ ЧВС:}~\LPoi^{1030}+\LPoi^{1562}&\color{darkred}\longrightarrow \LPoi^{1003}+\LPoi^{1629}	
 				\end{align*}			
 			\end{column}
@@ -51,28 +62,26 @@
 				\includegraphics[width=0.65\linewidth]{Dissertation/images/review/lp_modes_01_11_preza.pdf}
 			\end{column}
 		\end{columns}
-	\end{center}
-
 
 	\footnotesize
 
 	\begin{columns}[t]
-		\begin{column}{0.5\textwidth}
+		\begin{column}{0.6\textwidth}
 			\footnotesize
 			\begin{enumerate}
 				\item Существование ММЧВС:
 				\begin{itemize}
 					\footnotesize
-					\item Спектр при известном модовом составе;
-					\item Модовый состав при известном спектре;
+					\item Измерение спектра при известном модовом составе;
+					\item Определение модового состава при известном спектре;
 				\end{itemize}
 			\end{enumerate}
 		\end{column}
-		\begin{column}{0.5\textwidth}
+		\begin{column}{0.4\textwidth}
 			\footnotesize
 			\begin{enumerate}
 				\setcounter{enumi}{1}   % начинаем с 2
-				\item Взаимное влияние ММЧВС и ОМЧВС в эксперименте;
+				\item Взаимное влияние ММЧВС и ОМЧВС;
 				\item Численный расчёт.
 			\end{enumerate}
 		\end{column}
@@ -80,24 +89,16 @@
 \end{frame}
 
 \begin{frame}
-	\framesubtitle{Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
+	\framesubtitle{1. Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
 	\frametitle{Математическая модель ЧВС}
 
 	\begin{columns}
 		\begin{column}{0.48\textwidth}
-			\scalebox{0.72}{%
-			\begin{minipage}{\textwidth}
-				\begin{equation*}
-					\left\{\begin{array}{@{}l@{}}
-						\dfrac{dA_1}{dz}=\dfrac{\im n_{nl} \omega_1}{c}\!\left[\left(f_{11}\left|A_1\right|^2+\sum\limits_{k\neq1}f_{1k}\left|A_k\right|^2\right)\!A_1+2f_{1234}A_2^{\ast}A_3A_4\e^{\im \Delta k z}\right]\!, \vspace{0.05cm} \\ 
-						\dfrac{dA_2}{dz}=\dfrac{\im n_{nl} \omega_2}{c}\!\left[\left(f_{22}\left|A_2\right|^2+\sum\limits_{k\neq2}f_{2k}\left|A_k\right|^2\right)\!A_2+2f_{2134}A_1^{\ast}A_3A_4\e^{\im \Delta k z}\right], \vspace{0.05cm} \\
-						\dfrac{dA_3}{dz}=\dfrac{\im n_{nl} \omega_3}{c}\!\left[\left(f_{33}\left|A_3\right|^2+\sum\limits_{k\neq3}f_{3k}\left|A_k\right|^2\right)\!A_3+2f_{3412}A_4^{\ast}A_2A_1\e^{-\im \Delta k z}\right], \vspace{0.05cm} \\
-						\dfrac{dA_4}{dz}=\dfrac{\im n_{nl} \omega_4}{c}\!\left[\left(f_{44}\left|A_4\right|^2+\sum\limits_{k\neq4}f_{4k}\left|A_k\right|^2\right)\!A_4+2f_{4312}A_3^{\ast}A_2A_1\e^{-\im \Delta k z}\right].
-					\end{array}\right.\,	
-					\label{eq:mainEQfwm}
-				\end{equation*}
-			\end{minipage}
-		}
+			\includegraphics[width=\linewidth]{Dissertation/images/imfwm/phase_sync_kappa}
+			
+			\centering
+			\footnotesize{Волновая расстройка (сплошные линии, левая шкала) и спектры усиления (затенённые области, правая шкала) для {\color{notSoDarkRed}ОМЧВС}} и ММЧВС.
+			
 		\end{column}
 		\begin{column}{0.52\textwidth}
 			\includegraphics[width=\linewidth]{Dissertation/images/imfwm/model_spectra.eps}
@@ -105,36 +106,37 @@
 			\centering
 			\footnotesize{
 			Рассчитанные спектры двухволнового лазера для несинхронизированных и {\color{notSoDarkRed}{синхронизированных}} импульсов}
+
 		\end{column}
 	\end{columns}
 	
 	\vfill
-	\small{
-		
-	\begin{columns}
-		\begin{column}{0.49\textwidth}
-			$A_{{i}}$~--- амплитуды взаимодействующих волн с циклическими частотами $\omega_i$;
-			
-			$n_{nl}$~--- нелинейный показатель преломления;
-			
-			$f_{ij}\text{ и }f_{ijkl}$ $\left(i,j,k,l\in\left[1,\,4\right]\right)$~--- интегралы перекрытия между поперечными модами ОВ и их парами соответственно;
-		\end{column}
-		\begin{column}{0.49\textwidth}
-			$z$~--- продольная координата;
-			
-			$\Delta k$~--- волновая расстройка;
-			
-			${n_{i}}$~--- эффективный модовый показатель преломления;
-			
-			$c$~--- скорость света в вакууме.
-		\end{column}
-	\end{columns}	
-	} 
+%	\small{
+%		
+%	\begin{columns}
+%		\begin{column}{0.49\textwidth}
+%			$A_{{i}}$~--- амплитуды взаимодействующих волн с циклическими частотами $\omega_i$;
+%			
+%			$n_{nl}$~--- нелинейный показатель преломления;
+%			
+%			$f_{ij}\text{ и }f_{ijkl}$ $\left(i,j,k,l\in\left[1,\,4\right]\right)$~--- интегралы перекрытия между поперечными модами ОВ и их парами соответственно;
+%		\end{column}
+%		\begin{column}{0.49\textwidth}
+%			$z$~--- продольная координата;
+%			
+%			$\Delta k$~--- волновая расстройка;
+%			
+%			${n_{i}}$~--- эффективный модовый показатель преломления;
+%			
+%			$c$~--- скорость света в вакууме.
+%		\end{column}
+%	\end{columns}	
+%	} 
 \end{frame}
 
 
 \begin{frame}
-	\framesubtitle{Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
+	\framesubtitle{1. Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
 	\frametitle{Подавление ММ ЧВС}
 	
 	\begin{columns}
@@ -162,7 +164,7 @@
 
 \begin{frame}
 	\justifying
-	\framesubtitle{Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
+	\framesubtitle{1. Взаимное влияние процессов четырёхволнового смешения в оптических волокнах}
 	\frametitle{Положение, выносимое на защиту}
 	\large
 	
