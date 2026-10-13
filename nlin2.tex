@@ -1,7 +1,7 @@
 \section{Фазовый синхронизм при фотоиндуцированной генерации второй 	гармоники в оптическом волокне}
 
 \begin{frame}
-	\frametitle{Кривые фазового синхронизма при ГВГ в оптических волокнах}
+	\frametitle{2. Кривые фазового синхронизма при ГВГ в оптических волокнах}
 	\includegraphics[width=\linewidth]{Presentation/images/problem_fiber_shg}
 
 	\hfill
@@ -19,7 +19,7 @@
 				
 				\vspace{0.2cm}
 				
-				\underline{Что неизвестно:} динамика кривых фазового синхронизма (КФС) при записи $\chi^{(2)}$-решётки.
+				\underline{Что неизвестно:} динамика кривых фазового синхронизма (КФС) при записи $\chi^{(2)}$-решётки в режиме самозатравки
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\textbf{Зачем это нужно:}
@@ -34,24 +34,22 @@
 \end{frame}
 
 \begin{frame}[fragile]
-	\framesubtitle{Кривые фазового синхронизма при ГВГ в оптических волокнах}
+	\framesubtitle{2. Кривые фазового синхронизма при ГВГ в оптических волокнах}
 	\frametitle{Модель}
-
-	
-	\vspace{0.5cm}
 	
 	Динамика ГВГ в ОВ\footnote{\scriptsize Антонюк Б. П., Антонюк В. Б. Самоорганизация возбуждений в германосиликатных волоконных световодах и ее роль в генерации второй гармоники //Успехи физических наук. – 2001. – Т. 171. – №. 1. – С. 61-78.}:
 	
+	\vspace{0.2cm}
 	
 	\begin{columns}
-		\begin{column}{0.52\textwidth}	
+		\begin{column}{0.57\textwidth}	
 		\vspace{-0.6cm}
 			\only<1>{
 				\begin{equation*}
 					\begin{aligned}
-						\frac{\partial A_1}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{\omega}}\left( A_0^{\ast} A_1^{\ast} A_2 + \gamma_{11} A_1 A_1^{\ast} A_1 + 2\gamma_{12} A_2 A_2^{\ast} A_1\right), \\
-						\frac{\partial A_2}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{2\omega}}\left(A_0 A_1^{2}  + 2\gamma_{12} A_1 A_1^{\ast} A_2 + \gamma_{22} A_2 A_2^{*} A_2 \right), \\
-						\frac{\partial A_{0}}{\partial t} &= \alpha_2 \left|A_2\right|^2 \cdot \left(u e^{\im\left[\arg{A_2}-2\arg{A_1}\right]}-A_{0}\right).
+						\frac{\partial A_1}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{\omega}}\left( A_0^{\ast} A_1^{\ast} A_2 + \gamma_{11} A_1 A_1^{\ast} A_1 + 2\gamma_{12} A_2 A_2^{\ast} A_1\right) \\
+						\frac{\partial A_2}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{2\omega}}\left(A_0 A_1^{2}  + 2\gamma_{12} A_1 A_1^{\ast} A_2 + \gamma_{22} A_2 A_2^{*} A_2 \right) \\
+						\frac{\partial A_{0}}{\partial t} &= \alpha_2 \left|A_2\right|^2 \cdot \left(u e^{\im\left[\arg{A_2}-2\arg{A_1}\right]}-A_{0}\right)
 					\end{aligned}
 				\end{equation*}
 			}	
@@ -59,9 +57,9 @@
 			\only<2->{
 				\begin{equation*}
 					\begin{aligned}
-						\frac{\partial A_1}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{\omega}}\left( A_0^{\ast} A_1^{\ast} A_2 + \highlight{\gamma_{11} A_1 A_1^{\ast} A_1 + 2\gamma_{12} A_2 A_2^{\ast} A_1}\right), \\
-						\frac{\partial A_2}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{2\omega}}\left(A_0 A_1^{2}  + \highlight{2\gamma_{12} A_1 A_1^{\ast} A_2 + \gamma_{22} A_2 A_2^{*} A_2} \right), \\
-						\frac{\partial A_{0}}{\partial t} &= \alpha_2 \left|A_2\right|^2 \cdot \left(u e^{\im\left[\arg{A_2}-2\arg{A_1}\right]}-A_{0}\right).
+						\frac{\partial A_1}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{\omega}}\left( A_0^{\ast} A_1^{\ast} A_2 + \highlight{\gamma_{11} A_1 A_1^{\ast} A_1 + 2\gamma_{12} A_2 A_2^{\ast} A_1}\right) \\
+						\frac{\partial A_2}{\partial z} &= \im \frac{4 \pi \omega \chi^{\left(3\right)}}{c n_{2\omega}}\left(A_0 A_1^{2}  + \highlight{2\gamma_{12} A_1 A_1^{\ast} A_2 + \gamma_{22} A_2 A_2^{*} A_2} \right) \\
+						\frac{\partial A_{0}}{\partial t} &= \alpha_2 \left|A_2\right|^2 \cdot \left(u e^{\im\left[\arg{A_2}-2\arg{A_1}\right]}-A_{0}\right)
 					\end{aligned}
 				\end{equation*}
 			}	
@@ -83,16 +81,16 @@
 			
 			$\alpha_2$ --- коэффициент, определяющий скорость насыщения; $(\alpha_2 u^{2})^{-1} = 5~\text{часов}$
 			
-			$\gamma_{ij}$, $i,j \in [1,2]$ --- коэффициенты, пропорциональные интегралам перекрытия мод. 
+			$\gamma_{ij}$, $i,j = \overline{1,2}$ --- коэффициенты, пропорциональные интегралам перекрытия мод. 
 						
-			Амплитуды полей соответствуют начальным пиковым мощностям накачки $P_1(0) = 4$~кВт и второй гармоники $P_2(0) = 500$~нВт.
+			Амплитуды полей соответствуют начальным пиковым мощностям накачки $P_1 = 4$~кВт и второй гармоники $P_2 = 500$~нВт.
 		\end{column}
 	\end{columns}	
 \end{frame}
 
 
 \begin{frame}
-	\framesubtitle{Кривые фазового синхронизма при ГВГ в оптических волокнах}
+	\framesubtitle{2. Кривые фазового синхронизма при ГВГ в оптических волокнах}
 	\frametitle{Эксперимент}
 	
 	
@@ -101,6 +99,7 @@
 			Методика эксперимента:
 			
 			\begin{itemize}
+				\small
 				\item Запись решётки второй  гармоники; $P_{\text{pump}}=38~\text{Вт}$;
 				
 				\item По достижении определённой мощности второй гармоники процесс записи приостанавливается и производится измерение кривых спектрального и температурного (температура волокна) синхронизмов; $P_{\text{pump}}=500~\text{мВт}$;
@@ -125,7 +124,7 @@
 \end{frame}
 
 \begin{frame}
-	\framesubtitle{Кривые фазового синхронизма при ГВГ в оптических волокнах}
+	\framesubtitle{2. Кривые фазового синхронизма при ГВГ в оптических волокнах}
 	\frametitle{Результаты}
 	
 	\centering
@@ -138,7 +137,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Кривые фазового синхронизма при ГВГ в оптических волокнах}
+	\frametitle{2. Кривые фазового синхронизма при ГВГ в оптических волокнах}
 	\framesubtitle{Результаты}
 	
 	
@@ -185,7 +184,7 @@
 
 \begin{frame}
 	\justifying 
-	\framesubtitle{Кривые фазового синхронизма при ГВГ в оптических волокнах}
+	\framesubtitle{2. Кривые фазового синхронизма при ГВГ в оптических волокнах}
 	\frametitle{Положение, выносимое на защиту}
 	
 	В процессе оптического полинга германосиликатного оптического волокна излучением ближнего ИК-диапазона ширина кривых фазового синхронизма при генерации второй гармоники монотонно уменьшается, а их пик сдвигается к расстройке, определяемой фазовой самомодуляцией и кросс-модуляцией. При этом выход эффективности генерации второй гармоники на постоянный уровень наступает до завершения эволюции кривых фазового синхронизма, поскольку уменьшение ширины кривых фазового синхронизма и смещение их пиковых значений компенсируются одновременным ростом пиковой эффективности преобразования.
