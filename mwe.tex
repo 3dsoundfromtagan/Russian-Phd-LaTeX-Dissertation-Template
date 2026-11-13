@@ -1,0 +1,58 @@
+\documentclass{beamer}
+
+% --- Шрифты CMU: есть кириллица в OpenType, входят в MiKTeX (пакет cm-unicode) ---
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+
+\usepackage[russian]{babel}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+% --- Стиль: 3 аргумента, поэтому .style n args={3} ---
+\tikzset{
+	photo/.style n args={3}{
+		inner sep=0pt,
+		path picture={
+			\clip (0,0) ellipse (#1 and #2);
+			\node at (0,0) {\includegraphics[width=2*#1, height=2*#2]{#3}};
+		}
+	}
+}
+
+\begin{document}
+	
+	\begin{frame}[plain]
+		\frametitle{Благодарности}
+		
+		\vspace*{0.8cm}
+		\begin{center}
+			\Large\bfseries
+			Огромная благодарность моим научным руководителям,\\[2pt]
+			коллегам и близким за поддержку и помощь в работе!
+		\end{center}
+		
+		\begin{tikzpicture}[remember picture, overlay]
+			% photo={полуширина}{полувысота}{файл}
+			\node[photo={1.6cm}{1.6cm}{example-image-a}, rotate=15]
+			at ([xshift=3cm,  yshift=-2.5cm]current page.north west) {};
+			
+			\node[photo={1.6cm}{1.6cm}{example-image-b}, rotate=-12]
+			at ([xshift=-3cm, yshift=-2.5cm]current page.north east) {};
+			
+			\node[photo={1.6cm}{1.6cm}{example-image-c}, rotate=-8]
+			at ([xshift=3cm,  yshift=2.5cm] current page.south west) {};
+			
+			\node[photo={1.6cm}{1.6cm}{example-image-a}, rotate=18]
+			at ([xshift=-3cm, yshift=2.5cm] current page.south east) {};
+			
+			% Подпись под одним из фото
+			\node[fill=white, fill opacity=0.85, text opacity=1,
+			rounded corners=2pt, font=\scriptsize, inner sep=2pt, rotate=15]
+			at ([xshift=3cm, yshift=-4.6cm]current page.north west) {Иванов И.И.};
+		\end{tikzpicture}
+		
+	\end{frame}
+	
+\end{document}
