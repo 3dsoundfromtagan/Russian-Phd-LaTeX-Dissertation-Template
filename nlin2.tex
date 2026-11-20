@@ -102,6 +102,42 @@
 	}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Методика эксперимента (режим «самозатравки»)}
+	
+	\centering
+	\begin{tikzpicture}[
+		node distance=0.5cm and 2cm,
+		box/.style={rectangle, draw=blue!70!black, thick, fill=blue!10, 
+			text width=4.5cm, align=center, minimum height=1.0cm, rounded corners},
+		arrow/.style={->, >=stealth, thick, draw=blue!70!black},
+		looparrow/.style={->, >=stealth, thick, draw=blue!70!black}
+		]
+		
+		% Блок 1: Запись решетки
+		\node[box] (B1) {\textbf{Запись решётки} \\ \(\langle P_{\text{pump}}\rangle = 38~\text{Вт}\)};
+		
+		% Блок 2: Приостановка и измерение
+		\node[box, below=of B1] (B2) {\textbf{Приостановка записи} \\ \(P_{\text{pump}} = 500~\text{мВт}\) \\ Измерение КФС (спектр. и темп.)};
+		
+		% Блок 3: Условие выхода (полка)
+		\node[box, below=of B2] (B3) {\textbf{Достигнута полка?} \\ (эффективность ГВГ не растёт)};
+		
+		% Основные стрелки
+		\draw[arrow] (B1) -- (B2);
+		\draw[arrow] (B2) -- (B3);
+		
+		% Петля назад (замыкание)
+		\draw[looparrow] (B2.east) -- ++(1.0,0) |- (B1.east)
+		node[midway, right, font=\small, text=black!80!black, align=left] {Нет\\(продолжаем\\запись)};
+		
+		% Выход из цикла
+		\draw[arrow, draw=green!60!black] (B3.west) -- ++(-1.5,0) node[left, font=\small, text=green!60!black, align=center] {Да\\(Конец)};
+		
+	\end{tikzpicture}
+	
+\end{frame}
+
 
 \begin{frame}
 	\framesubtitle{2. Кривые фазового синхронизма при ГВГ в оптических волокнах}
@@ -133,7 +169,7 @@
 			
 			\includegraphics[width=0.9\linewidth]{Dissertation/images/fibershg/kinetic}
 			
-			\footnotesize{Эффективности ГВГ от времени: \color{defcolor1}{эксперимент}, \color{defcolor2}{моделирование}.}
+			\footnotesize{Эффективности ГВГ от времени: \color{defcolor2}{эксперимент}, \color{defcolor1}{моделирование}.}
 		\end{column}
 	\end{columns}	
 	
