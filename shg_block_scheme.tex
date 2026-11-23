@@ -1,0 +1,31 @@
+\begin{tikzpicture}[
+	node distance=0.5cm and 2cm,
+	box/.style={rectangle, draw=blue!70!black, thick, fill=blue!10, 
+		text width=4.0cm, align=center, minimum height=0.5cm, rounded corners},
+	arrow/.style={->, >=stealth, very thick, draw=blue!70!black},
+	looparrow/.style={->, >=stealth, very thick, draw=blue!70!black}
+	]
+	
+	% Блок 1: Запись решетки
+	\node[box] (B1) {\textbf{Запись решётки $\chi^{(2)}$} \\ \(\langle P_{\text{pump}}\rangle = 38~\text{Вт}\)};
+	
+	% Блок 2: Приостановка и измерение
+	\node[box, below=of B1] (B2) {\textbf{Измерение КФС} \\ \(\langle P_{\text{pump}} = 500~\text{мВт}\rangle\) \\ Спектральная, температурная};
+	
+	% Блок 3: Условие выхода (полка)
+	\node[box, below=of B2] (B3) {\textbf{Эффективность ГВГ перестала расти?}};
+	
+	% Блок 4: Остановка
+	\node[box, below=of B3] (B4) {\textbf{Конец}};
+	
+	% Основные стрелки
+	\draw[arrow] (B1) -- (B2);
+	\draw[arrow] (B2) -- (B3);
+	\draw[arrow] (B3) -- (B4) node[pos=0.5, left, 	font=\small, text=black!60!black] {\textbf{Да}};
+	
+	
+	% Петля назад (замыкание)
+	\draw[looparrow] (B3.east) -- ++(0.4,-0) |- (B1.east)
+	node[near start, right, font=\small, text=black!80!black, align=center] {\textbf{Нет}\\(продолжаем\\запись)};
+	
+\end{tikzpicture}
