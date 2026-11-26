@@ -39,7 +39,7 @@
 			
 			\begin{center}
 				\centering
-				\includegraphics[height=1.74cm]{Presentation/images/prlc}
+				\includegraphics[height=1.74cm]{Presentation/images/experimental_setup_RUS_10_04_16.pdf}
 			\end{center}
 			
 			\vspace{-0.5cm}
@@ -62,15 +62,16 @@
 
 \begin{frame}
 	\frametitle{3. Повышение точности обработки температурных кинетик в методе ПРЛК}
-%	\framesubtitle{Пьезоэлектрическая резонансная лазерная калориметрия}
+%	\framesubtitle{Пьезоэлектрическая резонансная лазерная калориметрия
 	
-	Уравнение теплового баланса, приближение бесконечной теплопроводности:
-	
-	\vspace{0.3cm}
+%	\vspace{0.3cm}
 	
 	\begin{columns}
 		
 		\begin{column}{0.5\textwidth}
+			Уравнение теплового баланса, приближение бесконечной теплопроводности:
+			
+			
 			\[
 			\begin{cases}
 				\dfrac{d T}{d t} = \overline{Q}\theta(t_0 - t) - \Gamma(T - T_a) \\
@@ -96,7 +97,7 @@
 		\end{column}'
 		
 		\begin{column}{0.5\textwidth}
-			{\linespread{1.2}\selectfont\small{$\overline{Q} = \alpha LP/(mc_{\text{sp}})$ --- усреднённый по образцу тепловой источник, связанный с поглощением лазерного излучения при малом оптическом поглощении,
+			{\linespread{1.3}\selectfont\small{$\overline{Q} = \alpha LP/(mc_{\text{sp}})$ --- тепловой источник
 				
 			$\alpha$~--- коэффициент поглощения,
 			
@@ -112,7 +113,13 @@
 			
 			$T_a$ --- температура окружающей среды,
 			
-			$t_0$ --- выключение лазера}}
+			$t_0$ --- момент выключения лазера}}
+		
+		
+			\begin{center}
+				\centering
+				\includegraphics[width=0.45\linewidth]{Presentation/images/T_P_lc.pdf}
+			\end{center}
 		\end{column}
 		
 	\end{columns}	
@@ -160,7 +167,7 @@
 	\frametitle{Влияние непостоянства температуры окружающей среды}
 	
 	\centering
-	Мотивация: суточный дрейф $T_a$, отсутствие термостатирования.\\Кинетика $T_a$ произвольная.
+	Мотивация: дрейф $T_a$, отсутствие термостатирования.\\Кинетика $T_a$ произвольная.
 		
 	\begin{columns}
 		\begin{column}{0.55\textwidth}			
@@ -196,7 +203,7 @@
 	\begin{columns}
 		\small
 		\begin{column}{0.7\textwidth}			
-			Мотивация: неконтролируемый теплообмен. Пусть различные, но постоянные $h$ при нагреве и охлаждении.			
+			Мотивация: неконтролируемый теплообмен. Постоянные, но различные $h$ при нагреве и охлаждении.			
 		\end{column}
 		\begin{column}{0.3\textwidth}
 			\includegraphics[height=1.7cm]{Presentation/images/h_vs_t}
@@ -300,7 +307,7 @@
 			Почему LBO:
 			\begin{itemize}
 				\setlength{\itemsep}{0.3em}
-				\item Низкое оптическое поглощение \(\to\) слабый разогрев \(\to\) сильнее проявляется нестабильность \(T_a\);
+				\item Низкое поглощение \(\to\) слабый разогрев \(\to\) сильнее проявляется нестабильность \(T_a\);
 				\item Большие размеры \((100\cdot50\cdot50~\text{мм}^3)\) \(\to\) низкая скорость теплоотдачи \(\to\) сильнее сказывается её нестабильность.
 			\end{itemize}
 		\end{column}
